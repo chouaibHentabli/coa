@@ -1,4 +1,4 @@
-package interfaces;
+package util;
 
 /**
  * Created by chouaib on 23/01/17.

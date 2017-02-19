@@ -1,11 +1,13 @@
-package interfaces;
+package captor;
+
+import util.Subject;
 
 import java.util.concurrent.Future;
 
 /**
  * Created by chouaib on 19/02/17.
  */
-public interface AsynCaptor extends Subject {
+public interface IAsyncCaptor extends Subject {
 
     public Future<Integer> getValue();
 }

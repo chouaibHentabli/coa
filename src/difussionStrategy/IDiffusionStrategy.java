@@ -1,18 +1,19 @@
-package interfaces;
+package difussionStrategy;
 
-import difussionStrategy.DiffusionType;
+import captor.ICaptor;
+import util.Observer;
 
 import java.util.List;
 
 /**
  * Created by chouaib on 19/02/17.
  */
-public interface DiffusionStrategy {
+public interface IDiffusionStrategy {
 
     /**
      * Prepare all the necesserary for a complete working algo
      */
-    void configure(Captor captor, List<Observer> clients);
+    void configure(ICaptor captor, List<Observer> clients);
 
     /**
      * Execute the algo with parameters specified inside the configure method
