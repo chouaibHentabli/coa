@@ -3,7 +3,7 @@ package interfaces;
 /**
  * Created by chouaib on 19/02/17.
  */
-public interface Captor {
+public interface Captor extends Subject {
 
-    public double getValue();
+    public Integer getValue();
 }
