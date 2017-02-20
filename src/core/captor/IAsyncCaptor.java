@@ -10,4 +10,9 @@ import java.util.concurrent.Future;
 public interface IAsyncCaptor extends Subject {
 
     public Future<Integer> getValue();
+
+    /**
+     * Send a request for value updates to each observers
+     */
+    void tick();
 }

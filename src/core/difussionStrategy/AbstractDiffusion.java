@@ -3,15 +3,20 @@ package core.difussionStrategy;
 import core.captor.ICaptor;
 import core.util.Observer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by chouaib on 23/01/17.
+ * Created by chouaib on 20/02/17.
  */
-public class EpocDiffusion extends AbstractDiffusion {
+public class AbstractDiffusion implements IDiffusionStrategy {
 
-    public EpocDiffusion(DiffusionType type) {
-        super(type);
+    private DiffusionType type;
+    protected List<Observer> observers = new ArrayList<>();
+
+
+    public AbstractDiffusion(DiffusionType type) {
+        this.type = type;
     }
 
     @Override

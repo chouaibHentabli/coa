@@ -1,12 +1,31 @@
 package core.captor;
 
+import core.difussionStrategy.*;
+
 import java.util.Observer;
-import java.util.concurrent.Future;
 
 /**
  * Created by chouaib on 20/02/17.
  */
-public class Captor implements IAsyncCaptor {
+public class Captor implements ICaptor {
+
+    private static int value = 0;
+    private IDiffusionStrategy diffuseStrategy;
+
+    public void setDiffuseStrategy(DiffusionType type) {
+        switch (type) {
+            case ATOMIC:
+                diffuseStrategy = new AtomicDiffusion(DiffusionType.ATOMIC);
+                break;
+            case EPOC:
+                diffuseStrategy = new EpocDiffusion(DiffusionType.EPOC);
+                break;
+            case SEQUENTIAL:
+                diffuseStrategy = new SeqDiffusion(DiffusionType.SEQUENTIAL);
+                break;
+        }
+        //diffuseStrategy.configure(this, observers);
+    }
 
     @Override
     public void attach(Observer o) {
@@ -19,7 +38,11 @@ public class Captor implements IAsyncCaptor {
     }
 
     @Override
-    public Future<Integer> getValue() {
-        return null;
+    public Integer getValue() {
+        return value;
+    }
+
+    @Override
+    public void tick() {
     }
 }

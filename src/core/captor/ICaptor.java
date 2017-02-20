@@ -8,4 +8,9 @@ import core.util.Subject;
 public interface ICaptor extends Subject {
 
     public Integer getValue();
+
+    /**
+     * Send a request for value updates to each observers
+     */
+    void tick();
 }
