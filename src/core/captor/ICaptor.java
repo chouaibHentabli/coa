@@ -1,6 +1,6 @@
-package captor;
+package core.captor;
 
-import util.Subject;
+import core.util.Subject;
 
 /**
  * Created by chouaib on 19/02/17.

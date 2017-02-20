@@ -1,4 +1,4 @@
-package captor;
+package core.captor;
 
 import java.util.Observer;
 import java.util.concurrent.Future;

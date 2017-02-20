@@ -1,7 +1,7 @@
-package difussionStrategy;
+package core.difussionStrategy;
 
-import captor.ICaptor;
-import util.Observer;
+import core.captor.ICaptor;
+import core.util.Observer;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import java.util.List;
 public interface IDiffusionStrategy {
 
     /**
-     * Prepare all the necesserary for a complete working algo
+     * Prepare  the necesserary for a complete working algo
      */
-    void configure(ICaptor captor, List<Observer> clients);
+    void configure(ICaptor captor, List<Observer> observers);
 
     /**
      * Execute the algo with parameters specified inside the configure method

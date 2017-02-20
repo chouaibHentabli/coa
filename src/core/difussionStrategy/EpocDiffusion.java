@@ -1,4 +1,4 @@
-package difussionStrategy;
+package core.difussionStrategy;
 
 /**
  * Created by chouaib on 23/01/17.

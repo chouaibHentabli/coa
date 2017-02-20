@@ -1,7 +1,7 @@
-package display;
+package core.display;
 
-import captor.IAsyncCaptor;
-import util.Observer;
+import core.captor.IAsyncCaptor;
+import core.util.Observer;
 
 
 /**

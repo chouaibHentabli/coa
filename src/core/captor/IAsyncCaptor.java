@@ -1,6 +1,6 @@
-package captor;
+package core.captor;
 
-import util.Subject;
+import core.util.Subject;
 
 import java.util.concurrent.Future;
 
