@@ -24,8 +24,4 @@ public class EpocDiffusion extends AbstractDiffusion {
 
     }
 
-    @Override
-    public DiffusionType getDiffusionType() {
-        return null;
-    }
 }

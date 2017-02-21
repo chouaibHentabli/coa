@@ -1,16 +1,16 @@
 package core.captor;
 
 import core.difussionStrategy.*;
+import core.util.AbstractSubject;
 
+import java.util.AbstractCollection;
 import java.util.Observer;
 
 /**
  * Created by chouaib on 20/02/17.
  */
-public class Captor implements ICaptor {
+public class Captor extends AbstractCaptor {
 
-    private static int value = 0;
-    private IDiffusionStrategy diffuseStrategy;
 
     public void setDiffuseStrategy(DiffusionType type) {
         switch (type) {
@@ -37,12 +37,4 @@ public class Captor implements ICaptor {
 
     }
 
-    @Override
-    public Integer getValue() {
-        return value;
-    }
-
-    @Override
-    public void tick() {
-    }
 }

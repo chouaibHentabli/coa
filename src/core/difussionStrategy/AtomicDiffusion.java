@@ -25,8 +25,4 @@ public class AtomicDiffusion extends AbstractDiffusion {
 
     }
 
-    @Override
-    public DiffusionType getDiffusionType() {
-        return null;
-    }
 }

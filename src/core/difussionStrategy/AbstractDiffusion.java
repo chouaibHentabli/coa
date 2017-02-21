@@ -31,6 +31,6 @@ public class AbstractDiffusion implements IDiffusionStrategy {
 
     @Override
     public DiffusionType getDiffusionType() {
-        return null;
+        return type;
     }
 }

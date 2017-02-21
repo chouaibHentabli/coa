@@ -23,9 +23,4 @@ public class SeqDiffusion extends AbstractDiffusion {
     public void execute() {
 
     }
-
-    @Override
-    public DiffusionType getDiffusionType() {
-        return null;
-    }
 }
