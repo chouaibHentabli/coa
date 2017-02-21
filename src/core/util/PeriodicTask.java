@@ -18,6 +18,6 @@ public class PeriodicTask extends TimerTask {
 
     @Override
     public void run() {
-
+        cmd.execute();
     }
 }

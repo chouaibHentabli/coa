@@ -26,7 +26,6 @@ public class Horloge implements IHorloge {
     public void activerPeriodiquement(Command cmd, long periodEnSecondes) {
         this.timer = new Timer();
         PeriodicTask task = new PeriodicTask(cmd);
-  
         timer.schedule(task, 0, periodEnSecondes);
     }
 
