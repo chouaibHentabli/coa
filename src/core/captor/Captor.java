@@ -26,15 +26,4 @@ public class Captor extends AbstractCaptor {
         }
         //diffuseStrategy.configure(this, observers);
     }
-
-    @Override
-    public void attach(Observer o) {
-
-    }
-
-    @Override
-    public void detach(Observer o) {
-
-    }
-
 }

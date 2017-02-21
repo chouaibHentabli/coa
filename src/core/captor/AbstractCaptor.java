@@ -18,6 +18,11 @@ public abstract class AbstractCaptor extends AbstractSubject implements ICaptor 
 
     @Override
     public void tick() {
-
+        diffuseStrategy.execute();
+        /*if (controller != null) {
+            controller.update(this);
+        }
+        System.out.println("Tick with " + getDiffusionStrategy() + "with value " + values);
+       */
     }
 }

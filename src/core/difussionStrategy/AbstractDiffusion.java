@@ -1,5 +1,6 @@
 package core.difussionStrategy;
 
+import core.captor.Captor;
 import core.captor.ICaptor;
 import core.util.Observer;
 
@@ -13,6 +14,7 @@ public class AbstractDiffusion implements IDiffusionStrategy {
 
     private DiffusionType type;
     protected List<Observer> observers = new ArrayList<>();
+    protected ICaptor captor;
 
 
     public AbstractDiffusion(DiffusionType type) {
@@ -21,7 +23,8 @@ public class AbstractDiffusion implements IDiffusionStrategy {
 
     @Override
     public void configure(ICaptor captor, List<Observer> observers) {
-
+        this.captor = captor;
+        this.observers = observers;
     }
 
     @Override
