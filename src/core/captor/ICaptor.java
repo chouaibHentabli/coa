@@ -1,5 +1,6 @@
 package core.captor;
 
+import core.difussionStrategy.IDiffusionStrategy;
 import core.util.Subject;
 
 /**
@@ -13,4 +14,6 @@ public interface ICaptor extends Subject {
      * Send a request for value updates to each observers
      */
     void tick();
+
+    IDiffusionStrategy getDiffusionStrategy();
 }

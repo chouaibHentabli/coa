@@ -17,6 +17,11 @@ public abstract class AbstractCaptor extends AbstractSubject implements ICaptor 
     }
 
     @Override
+    public IDiffusionStrategy getDiffusionStrategy() {
+        return diffuseStrategy;
+    }
+
+    @Override
     public void tick() {
         diffuseStrategy.execute();
         /*if (controller != null) {

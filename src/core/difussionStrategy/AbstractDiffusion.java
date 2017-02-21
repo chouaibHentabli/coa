@@ -36,4 +36,5 @@ public class AbstractDiffusion implements IDiffusionStrategy {
     public DiffusionType getDiffusionType() {
         return type;
     }
-}
+
+ }

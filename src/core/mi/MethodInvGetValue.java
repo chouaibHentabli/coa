@@ -9,6 +9,8 @@ import java.util.concurrent.Callable;
  */
 public class MethodInvGetValue implements IMethodInvocation {
 
+
+
     @Override
     public Object call() throws Exception {
         return null;

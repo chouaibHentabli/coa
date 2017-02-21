@@ -14,10 +14,6 @@ public class SeqDiffusion extends AbstractDiffusion {
         super(type);
     }
 
-    @Override
-    public void configure(ICaptor captor, List<Observer> observers) {
-
-    }
 
     @Override
     public void execute() {

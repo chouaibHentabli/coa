@@ -6,6 +6,8 @@ import java.util.concurrent.Future;
 
 /**
  * Created by chouaib on 19/02/17.
+ *
+ * Service
  */
 public interface IAsyncCaptor extends Subject {
 
