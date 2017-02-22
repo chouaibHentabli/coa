@@ -13,7 +13,7 @@ public class AtomicDiffusion extends AbstractDiffusion {
 
     @Override
     public void execute() {
-
+        observers.forEach(observer -> observer.update(captor));
     }
 
 }

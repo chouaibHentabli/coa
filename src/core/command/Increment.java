@@ -10,6 +10,10 @@ public class Increment implements Command {
 
     ICaptor captor;
 
+    public Increment(ICaptor captor) {
+        this.captor = captor;
+    }
+
     @Override
     public void execute() {
         captor.tick();
