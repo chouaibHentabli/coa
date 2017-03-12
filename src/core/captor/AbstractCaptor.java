@@ -1,5 +1,6 @@
 package core.captor;
 
+import core.difussionStrategy.DiffusionType;
 import core.difussionStrategy.IDiffusionStrategy;
 import core.util.AbstractSubject;
 
@@ -14,11 +15,6 @@ public abstract class AbstractCaptor extends AbstractSubject implements ICaptor 
     @Override
     public Integer getValue() {
         return value;
-    }
-
-    @Override
-    public IDiffusionStrategy getDiffusionStrategy() {
-        return diffuseStrategy;
     }
 
     @Override

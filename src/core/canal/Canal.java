@@ -1,6 +1,7 @@
 package core.canal;
 
 import core.captor.ICaptor;
+import core.difussionStrategy.DiffusionType;
 import core.difussionStrategy.IDiffusionStrategy;
 import core.display.Display;
 
@@ -70,7 +71,7 @@ public class Canal implements ICanal {
 
 
     @Override
-    public IDiffusionStrategy getDiffusionStrategy() {
+    public IDiffusionStrategy getDiffusionStrategy(DiffusionType atomic) {
         return null;
     }
 

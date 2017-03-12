@@ -1,5 +1,6 @@
 package core.captor;
 
+import core.difussionStrategy.DiffusionType;
 import core.difussionStrategy.IDiffusionStrategy;
 import core.util.Subject;
 
@@ -15,5 +16,5 @@ public interface ICaptor extends Subject {
      */
     void tick();
 
-    IDiffusionStrategy getDiffusionStrategy();
+    public void setDiffuseStrategy(DiffusionType type);
 }

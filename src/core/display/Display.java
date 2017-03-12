@@ -1,6 +1,7 @@
 package core.display;
 
 import com.sun.xml.internal.bind.v2.model.core.ID;
+import core.canal.ICanal;
 import core.captor.IAsyncCaptor;
 import core.captor.ICaptor;
 import core.util.Subject;
@@ -18,6 +19,8 @@ public class Display implements IDisplay {
     protected String name;
     private Integer value = 0;
     private Double time = 0.0;
+    //lien proxy
+    private ICanal canal;
     private static int identifier = 0;
 
     public Display(Controller controller) {
@@ -26,10 +29,6 @@ public class Display implements IDisplay {
     }
 
 
-    @Override
-    public void update(Subject captor) {
-
-    }
 
     @Override
     public void update(ICaptor subject) {

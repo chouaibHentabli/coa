@@ -6,7 +6,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.Controller">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9fe9f8" height="113.0" layoutX="170.0" layoutY="117.0"
                    stroke="BLACK" strokeType="INSIDE" width="165.0"/>

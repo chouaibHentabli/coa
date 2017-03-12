@@ -1,6 +1,5 @@
 package core.difussionStrategy;
 
-import core.captor.Captor;
 import core.captor.ICaptor;
 import core.util.Observer;
 
@@ -59,7 +58,7 @@ public class AbstractDiffusion implements IDiffusionStrategy {
     }
 
     @Override
-    public IDiffusionStrategy getDiffusionStrategy() {
+    public IDiffusionStrategy getDiffusionStrategy(DiffusionType atomic) {
         return null;
     }
 }

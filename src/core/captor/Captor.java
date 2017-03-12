@@ -3,6 +3,7 @@ package core.captor;
 import core.canal.ICanal;
 import core.difussionStrategy.*;
 import core.util.AbstractSubject;
+import main.Controller;
 
 import java.util.AbstractCollection;
 import java.util.ArrayList;
@@ -16,7 +17,12 @@ import java.util.Observer;
  */
 public class Captor extends AbstractCaptor {
 
-    List<ICanal> canals = new ArrayList<ICanal>();
+    private List<ICanal> canals = new ArrayList<ICanal>();
+    private Controller controller;
+
+    public Captor(Controller controller) {
+        this.controller = controller;
+    }
 
     public void setDiffuseStrategy(DiffusionType type) {
         switch (type) {
@@ -32,4 +38,6 @@ public class Captor extends AbstractCaptor {
         }
         //diffuseStrategy.configure(this, observers);
     }
+
+
 }
