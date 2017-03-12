@@ -14,6 +14,7 @@ public class AbstractDiffusion implements IDiffusionStrategy {
 
     private DiffusionType type;
     protected List<Observer> observers = new ArrayList<>();
+    //lien de proxy
     protected ICaptor captor;
 
 
@@ -37,4 +38,28 @@ public class AbstractDiffusion implements IDiffusionStrategy {
         return type;
     }
 
- }
+    @Override
+    public void attach(java.util.Observer o) {
+
+    }
+
+    @Override
+    public void detach(java.util.Observer o) {
+
+    }
+
+    @Override
+    public Integer getValue() {
+        return null;
+    }
+
+    @Override
+    public void tick() {
+
+    }
+
+    @Override
+    public IDiffusionStrategy getDiffusionStrategy() {
+        return null;
+    }
+}

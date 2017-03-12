@@ -4,15 +4,13 @@ import core.captor.ICaptor;
 import core.difussionStrategy.IDiffusionStrategy;
 import core.display.Display;
 
-import java.util.Observable;
 import java.util.Observer;
 
 
 /**
  * Created by chouaib on 23/01/17.
  */
-public class Canal implements ICanal, Observer {
-
+public class Canal implements ICanal {
 
     protected String name;
     private ICaptor captor;
@@ -28,7 +26,7 @@ public class Canal implements ICanal, Observer {
      */
     public Canal(ICaptor captor, Display display) {
         name = "Canal_" + ++identifier;
-        attach(this);
+        //attach(this);
         this.captor = captor;
         System.out.println(this + ".captor = " + captor);
     }
@@ -69,7 +67,7 @@ public class Canal implements ICanal, Observer {
     public void setDelay(int delay) {
         this.delay = delay;
     }
- 
+
 
     @Override
     public IDiffusionStrategy getDiffusionStrategy() {
@@ -101,11 +99,4 @@ public class Canal implements ICanal, Observer {
     public void update(ICaptor captor) {
 
     }
-
-    @Override
-    public void update(Observable o, Object arg) {
-
-    }
-
-
 }

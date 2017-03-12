@@ -1,17 +1,18 @@
 package core.display;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import core.captor.IAsyncCaptor;
-import core.util.Observer;
+import core.captor.ICaptor;
 import core.util.Subject;
 import main.Controller;
 
 
 /**
  * Created by chouaib on 19/02/17.
- *
+ * <p>
  * servant
  */
-public class Display implements Observer<IAsyncCaptor> {
+public class Display implements IDisplay {
 
     private final Controller controller;
     protected String name;
@@ -25,12 +26,13 @@ public class Display implements Observer<IAsyncCaptor> {
     }
 
 
-    public Void update(Subject subject) {
-        return null;
+    @Override
+    public void update(Subject captor) {
+
     }
 
     @Override
-    public Void update(IAsyncCaptor subject) {
-        return null;
+    public void update(ICaptor subject) {
+
     }
 }
