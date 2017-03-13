@@ -1,6 +1,6 @@
 package core.util;
 
-import java.util.Observer;
+
 
 /**
  * Created by chouaib on 17/01/17.

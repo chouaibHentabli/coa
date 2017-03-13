@@ -1,7 +1,8 @@
 package core.util;
 
-import java.util.*;
-import java.util.Observer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by chouaib on 20/02/17.
@@ -24,6 +25,5 @@ public class AbstractSubject implements Subject {
     public List<Observer> getObservers() {
         return observers;
     }
-
 
 }

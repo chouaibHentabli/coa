@@ -4,8 +4,11 @@ import core.captor.ICaptor;
 import core.difussionStrategy.DiffusionType;
 import core.difussionStrategy.IDiffusionStrategy;
 import core.display.Display;
+import core.display.IDisplay;
+import core.util.Subject;
 
 import java.util.Observer;
+import java.util.concurrent.Future;
 
 
 /**
@@ -15,7 +18,7 @@ public class Canal implements ICanal {
 
     protected String name;
     private ICaptor captor;
-    private Display dispaly;
+    private IDisplay display;
     private int delay = 0;
     private static int identifier = 0;
 
@@ -23,12 +26,13 @@ public class Canal implements ICanal {
     /**
      * Constrcutor
      *
-     * @param captor connected to
+     * @param captor connected to canal
      */
-    public Canal(ICaptor captor, Display display) {
+    public Canal(ICaptor captor, IDisplay display) {
         name = "Canal_" + ++identifier;
         //attach(this);
         this.captor = captor;
+        this.display = display;
         System.out.println(this + ".captor = " + captor);
     }
 
@@ -41,8 +45,8 @@ public class Canal implements ICanal {
         return captor;
     }
 
-    public Display getDispaly() {
-        return dispaly;
+    public IDisplay getDisplay() {
+        return display;
     }
 
     public int getDelay() {
@@ -61,8 +65,8 @@ public class Canal implements ICanal {
         this.captor = captor;
     }
 
-    public void setDispaly(Display dispaly) {
-        this.dispaly = dispaly;
+    public void setDisplay(Display display) {
+        this.display = display;
     }
 
     public void setDelay(int delay) {
@@ -71,23 +75,8 @@ public class Canal implements ICanal {
 
 
     @Override
-    public IDiffusionStrategy getDiffusionStrategy(DiffusionType atomic) {
+    public Future<Integer> getValue() {
         return null;
-    }
-
-    @Override
-    public void attach(Observer o) {
-        captor.attach(o);
-    }
-
-    @Override
-    public void detach(Observer o) {
-        captor.detach(o);
-    }
-
-    @Override
-    public Integer getValue() {
-        return captor.getValue();
     }
 
     @Override
@@ -97,7 +86,22 @@ public class Canal implements ICanal {
 
 
     @Override
-    public void update(ICaptor captor) {
+    public void update(Subject captor) {
 
+    }
+
+    @Override
+    public void update(ICaptor subject) {
+
+    }
+
+    @Override
+    public void attach(core.util.Observer o) {
+        captor.attach(o);
+    }
+
+    @Override
+    public void detach(core.util.Observer o) {
+        captor.detach(o);
     }
 }

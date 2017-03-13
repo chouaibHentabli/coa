@@ -1,5 +1,6 @@
 package core.canal;
 
+import core.captor.IAsyncCaptor;
 import core.captor.ICaptor;
 import core.util.ObservateurDeCapteur;
 
@@ -9,8 +10,10 @@ import core.util.ObservateurDeCapteur;
  */
 
 
-public interface ICanal extends ObservateurDeCapteur, ICaptor {
+public interface ICanal extends ObservateurDeCapteur, IAsyncCaptor {
 
-    Integer getValue();
+    void setDelay(int delay);
+
+    int getDelay();
 
 }

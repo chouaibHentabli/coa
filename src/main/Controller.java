@@ -1,9 +1,12 @@
 package main;
 
+import core.canal.Canal;
+import core.canal.ICanal;
 import core.captor.AbstractCaptor;
 import core.captor.Captor;
 import core.captor.ICaptor;
 import core.difussionStrategy.DiffusionType;
+import core.display.Display;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,6 +21,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.util.Observer;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
@@ -70,6 +74,17 @@ public class Controller implements Initializable {
     TextField delay;
 
 
+    ICanal canalA;
+    ICanal canalB;
+    ICanal canalC;
+    ICanal canalD;
+    ICanal canalE;
+
+    Display displayA = new Display(this);
+    Display displayB = new Display(this);
+    Display displayC = new Display(this);
+    Display displayD = new Display(this);
+    Display displayE = new Display(this);
     AbstractCaptor captor;
 
     public Controller() {
@@ -101,35 +116,35 @@ public class Controller implements Initializable {
         captor.setDiffuseStrategy(DiffusionType.ATOMIC);
 
         // First canal
-        channelA = new Channel(captor);
-        channelA.setDelay(Integer.parseInt(channelDelayA.getText()));
-        channelA.attach(displayA);
+        canalA = new Canal(captor, displayA);
+        canalA.setDelay(Integer.parseInt(channelDelayA.getText()));
+        canalA.attach(displayA);
 
         // Second canal
-        channelB = new Channel(captor);
-        channelB.setDelay(Integer.parseInt(channelDelayB.getText()));
-        channelB.attach(displayB);
+        canalB = new Canal(captor, displayB);
+        canalB.setDelay(Integer.parseInt(channelDelayB.getText()));
+        canalB.attach(displayB);
 
         // Third canal
-        channelC = new Channel(captor);
-        channelC.setDelay(Integer.parseInt(channelDelayC.getText()));
-        channelC.attach(displayC);
+        canalC = new Canal(captor, displayC);
+        canalC.setDelay(Integer.parseInt(channelDelayC.getText()));
+        canalC.attach(displayC);
 
         // Fourth canal
-        channelD = new Channel(captor);
-        channelD.setDelay(Integer.parseInt(channelDelayD.getText()));
-        channelD.attach(displayD);
+        canalD = new Canal(captor, displayD);
+        canalD.setDelay(Integer.parseInt(channelDelayD.getText()));
+        canalD.attach(displayD);
 
         // Fifth canal
-        channelE = new Channel(captor);
-        channelE.setDelay(Integer.parseInt(channelDelayE.getText()));
-        channelE.attach(displayE);
+        canalE = new Canal(captor, displayE);
+        canalE.setDelay(Integer.parseInt(channelDelayE.getText()));
+        canalE.attach(displayE);
 
-        channelDelayA.textProperty().addListener((observable, oldValue, newValue) -> channelA.setDelay(Integer.parseInt(newValue)));
-        channelDelayB.textProperty().addListener((observable, oldValue, newValue) -> channelB.setDelay(Integer.parseInt(newValue)));
-        channelDelayC.textProperty().addListener((observable, oldValue, newValue) -> channelC.setDelay(Integer.parseInt(newValue)));
-        channelDelayD.textProperty().addListener((observable, oldValue, newValue) -> channelD.setDelay(Integer.parseInt(newValue)));
-        channelDelayE.textProperty().addListener((observable, oldValue, newValue) -> channelE.setDelay(Integer.parseInt(newValue)));
+        channelDelayA.textProperty().addListener((observable, oldValue, newValue) -> canalA.setDelay(Integer.parseInt(newValue)));
+        channelDelayB.textProperty().addListener((observable, oldValue, newValue) -> canalB.setDelay(Integer.parseInt(newValue)));
+        channelDelayC.textProperty().addListener((observable, oldValue, newValue) -> canalC.setDelay(Integer.parseInt(newValue)));
+        channelDelayD.textProperty().addListener((observable, oldValue, newValue) -> canalD.setDelay(Integer.parseInt(newValue)));
+        channelDelayE.textProperty().addListener((observable, oldValue, newValue) -> canalE.setDelay(Integer.parseInt(newValue)));
         delay.textProperty().addListener((observable, oldValue, newValue) -> reinitCaptor());
 
         reinitCaptor();

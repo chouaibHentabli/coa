@@ -38,14 +38,10 @@ public class AbstractDiffusion implements IDiffusionStrategy {
     }
 
     @Override
-    public void attach(java.util.Observer o) {
-
+    public void setDiffuseStrategy(DiffusionType type) {
+        this.type = type;
     }
 
-    @Override
-    public void detach(java.util.Observer o) {
-
-    }
 
     @Override
     public Integer getValue() {
@@ -57,8 +53,14 @@ public class AbstractDiffusion implements IDiffusionStrategy {
 
     }
 
+
     @Override
-    public IDiffusionStrategy getDiffusionStrategy(DiffusionType atomic) {
-        return null;
+    public void attach(Observer o) {
+
+    }
+
+    @Override
+    public void detach(Observer o) {
+
     }
 }

@@ -2,7 +2,6 @@ package core.difussionStrategy;
 
 import core.captor.ICaptor;
 import core.util.Observer;
-import core.util.Subject;
 
 import java.util.List;
 

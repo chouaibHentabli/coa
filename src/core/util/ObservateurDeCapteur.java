@@ -7,5 +7,5 @@ import core.captor.ICaptor;
  */
 public interface ObservateurDeCapteur extends Observer<ICaptor> {
 
-    void update(ICaptor captor);
+    void update(Subject captor);
 }

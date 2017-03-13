@@ -29,9 +29,13 @@ public class Display implements IDisplay {
     }
 
 
+    @Override
+    public void update(Subject captor) {
+
+    }
 
     @Override
-    public void update(ICaptor subject) {
+    public void update(ICaptor captor) {
 
     }
 }
