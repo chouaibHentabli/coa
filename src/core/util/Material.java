@@ -31,7 +31,6 @@ public class Material {
     }
 
     public static Scheduler getScheduler() {
-
         return scheduler;
     }
 

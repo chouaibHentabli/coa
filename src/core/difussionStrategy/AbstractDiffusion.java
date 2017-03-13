@@ -53,10 +53,9 @@ public class AbstractDiffusion implements IDiffusionStrategy {
 
     }
 
-
     @Override
     public void attach(Observer o) {
-
+        
     }
 
     @Override

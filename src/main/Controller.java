@@ -7,6 +7,7 @@ import core.captor.Captor;
 import core.captor.ICaptor;
 import core.difussionStrategy.DiffusionType;
 import core.display.Display;
+import core.util.Scheduler;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -53,15 +54,15 @@ public class Controller implements Initializable {
     @FXML
     Text timeE;
     @FXML
-    TextField channelDelayA;
+    TextField canalDelayA;
     @FXML
-    TextField channelDelayB;
+    TextField canalDelayB;
     @FXML
-    TextField channelDelayC;
+    TextField canalDelayC;
     @FXML
-    TextField channelDelayD;
+    TextField canalDelayD;
     @FXML
-    TextField channelDelayE;
+    TextField canalDelayE;
 
     @FXML
     RadioButton atomic;
@@ -86,6 +87,8 @@ public class Controller implements Initializable {
     Display displayD = new Display(this);
     Display displayE = new Display(this);
     AbstractCaptor captor;
+
+    Scheduler scheduler;
 
     public Controller() {
         captor = new Captor(this);
@@ -117,34 +120,34 @@ public class Controller implements Initializable {
 
         // First canal
         canalA = new Canal(captor, displayA);
-        canalA.setDelay(Integer.parseInt(channelDelayA.getText()));
+        canalA.setDelay(Integer.parseInt(canalDelayA.getText()));
         canalA.attach(displayA);
 
         // Second canal
         canalB = new Canal(captor, displayB);
-        canalB.setDelay(Integer.parseInt(channelDelayB.getText()));
+        canalB.setDelay(Integer.parseInt(canalDelayB.getText()));
         canalB.attach(displayB);
 
         // Third canal
         canalC = new Canal(captor, displayC);
-        canalC.setDelay(Integer.parseInt(channelDelayC.getText()));
+        canalC.setDelay(Integer.parseInt(canalDelayC.getText()));
         canalC.attach(displayC);
 
         // Fourth canal
         canalD = new Canal(captor, displayD);
-        canalD.setDelay(Integer.parseInt(channelDelayD.getText()));
+        canalD.setDelay(Integer.parseInt(canalDelayD.getText()));
         canalD.attach(displayD);
 
         // Fifth canal
         canalE = new Canal(captor, displayE);
-        canalE.setDelay(Integer.parseInt(channelDelayE.getText()));
+        canalE.setDelay(Integer.parseInt(canalDelayE.getText()));
         canalE.attach(displayE);
 
-        channelDelayA.textProperty().addListener((observable, oldValue, newValue) -> canalA.setDelay(Integer.parseInt(newValue)));
-        channelDelayB.textProperty().addListener((observable, oldValue, newValue) -> canalB.setDelay(Integer.parseInt(newValue)));
-        channelDelayC.textProperty().addListener((observable, oldValue, newValue) -> canalC.setDelay(Integer.parseInt(newValue)));
-        channelDelayD.textProperty().addListener((observable, oldValue, newValue) -> canalD.setDelay(Integer.parseInt(newValue)));
-        channelDelayE.textProperty().addListener((observable, oldValue, newValue) -> canalE.setDelay(Integer.parseInt(newValue)));
+        canalDelayA.textProperty().addListener((observable, oldValue, newValue) -> canalA.setDelay(Integer.parseInt(newValue)));
+        canalDelayB.textProperty().addListener((observable, oldValue, newValue) -> canalB.setDelay(Integer.parseInt(newValue)));
+        canalDelayC.textProperty().addListener((observable, oldValue, newValue) -> canalC.setDelay(Integer.parseInt(newValue)));
+        canalDelayD.textProperty().addListener((observable, oldValue, newValue) -> canalD.setDelay(Integer.parseInt(newValue)));
+        canalDelayE.textProperty().addListener((observable, oldValue, newValue) -> canalE.setDelay(Integer.parseInt(newValue)));
         delay.textProperty().addListener((observable, oldValue, newValue) -> reinitCaptor());
 
         reinitCaptor();
@@ -153,7 +156,60 @@ public class Controller implements Initializable {
 
     private void reinitCaptor() {
 
+        scheduler.incrementWithStepByPeriod(captor, Integer.parseInt(delay.getText()), TimeUnit.MILLISECONDS);
     }
+
+    public void update(Display display) {
+        String value = String.valueOf(display.getValue());
+        String time = "";
+        if (display.getTime() != 0) {
+            time = formatDate(display.getTime().longValue());
+        }
+        if (valueA != null && timeA != null) {
+            if (display.equals(displayA)) {
+                valueA.setText(value);
+                timeA.setText(time);
+            }
+        }
+        if (valueB != null && timeB != null) {
+            if (display.equals(displayB)) {
+                valueB.setText(value);
+                timeB.setText(time);
+            }
+        }
+        if (valueC != null && timeC != null) {
+            if (display.equals(displayC)) {
+                valueC.setText(value);
+                timeC.setText(time);
+            }
+        }
+        if (valueD != null && timeD != null) {
+            if (display.equals(displayD)) {
+                valueD.setText(value);
+                timeD.setText(time);
+            }
+        }
+        if (valueE != null && timeE != null) {
+            if (display.equals(displayE)) {
+                valueE.setText(value);
+                timeE.setText(time);
+            }
+        }
+    }
+
+    public void update(Captor captor) {
+        if (valueCaptor != null && timeCaptor != null) {
+            valueCaptor.setText(String.valueOf(captor.getValues().getValue()));
+            String time = "";
+            if (captor.getValues().getTime() != 0 && captor.getValues().getTime() > 500) {
+                time = formatDate(captor.getValues().getTime().longValue());
+            } else {
+                time = "1000";
+            }
+            timeCaptor.setText(time);
+        }
+    }
+
 
     private String formatDate(long value) {
         return LocalDateTime.ofEpochSecond(value, 0, ZoneOffset.UTC).format(DateTimeFormatter.ISO_DATE_TIME);
