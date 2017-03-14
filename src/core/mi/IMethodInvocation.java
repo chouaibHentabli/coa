@@ -8,7 +8,7 @@ import java.util.concurrent.Callable;
  */
 public interface IMethodInvocation extends Callable {
 
-    void getCanal();
+    ICanal getCanal();
 
     void setCanal(ICanal canal);
 }

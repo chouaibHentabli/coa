@@ -1,10 +1,12 @@
 package core.canal;
 
+import core.captor.AbstractCaptor;
 import core.captor.ICaptor;
 import core.difussionStrategy.DiffusionType;
 import core.difussionStrategy.IDiffusionStrategy;
 import core.display.Display;
 import core.display.IDisplay;
+import core.mi.IMethodInvocation;
 import core.util.Subject;
 
 import java.util.Observer;
@@ -18,6 +20,7 @@ public class Canal implements ICanal {
 
     protected String name;
     private ICaptor captor;
+    private IMethodInvocation mi;
     private IDisplay display;
     private int delay = 0;
     private static int identifier = 0;
@@ -78,6 +81,7 @@ public class Canal implements ICanal {
     public Future<Integer> getValue() {
         return null;
     }
+
 
     @Override
     public void tick() {

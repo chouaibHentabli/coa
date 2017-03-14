@@ -9,13 +9,9 @@ import core.util.AbstractSubject;
  */
 public abstract class AbstractCaptor extends AbstractSubject implements ICaptor {
 
-    protected static int value = 0;
+    protected int value = 0;
     protected IDiffusionStrategy diffuseStrategy;
 
-    @Override
-    public Integer getValue() {
-        return value;
-    }
 
     @Override
     public void tick() {

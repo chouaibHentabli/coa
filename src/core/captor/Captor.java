@@ -24,6 +24,13 @@ public class Captor extends AbstractCaptor {
         this.controller = controller;
     }
 
+
+    public DiffusionType getDiffuseStrategy() {
+        return null;
+    }
+
+
+
     public void setDiffuseStrategy(DiffusionType type) {
         switch (type) {
             case ATOMIC:
@@ -36,7 +43,7 @@ public class Captor extends AbstractCaptor {
                 diffuseStrategy = new SeqDiffusion(DiffusionType.SEQUENTIAL);
                 break;
         }
-        //diffuseStrategy.configure(this, observers);
+        diffuseStrategy.configure(this, observers);
     }
 
 

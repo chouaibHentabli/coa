@@ -11,10 +11,14 @@ public interface ICaptor extends Subject {
 
     public Integer getValue();
 
+    public void setValue();
+
+
     /**
      * Send a request for value updates to each observers
      */
     void tick();
 
     public void setDiffuseStrategy(DiffusionType type);
+    public DiffusionType getDiffuseStrategy();
 }

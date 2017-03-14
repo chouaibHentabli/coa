@@ -11,8 +11,9 @@ import java.util.Timer;
 public class Horloge implements IHorloge {
 
     private Timer timer;
-
-
+    private int max;
+    private int min;
+    
     public Timer getTimer() {
         return timer;
     }

@@ -42,10 +42,20 @@ public class AbstractDiffusion implements IDiffusionStrategy {
         this.type = type;
     }
 
+    @Override
+    public DiffusionType getDiffuseStrategy() {
+        return null;
+    }
+
 
     @Override
     public Integer getValue() {
         return null;
+    }
+
+    @Override
+    public void setValue() {
+
     }
 
     @Override
