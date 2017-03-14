@@ -1,6 +1,6 @@
 package core.mi;
 
-import core.canal.ICanal;
+import core.display.IDisplay;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -9,21 +9,19 @@ import java.util.concurrent.LinkedBlockingQueue;
  * Created by chouaib on 20/02/17.
  */
 public class MethodInvUpdate implements IMethodInvocation {
-    private ICanal canal;
+
+    private IDisplay display;
     private static BlockingQueue queue = new LinkedBlockingQueue<>();
+
+
+    public MethodInvUpdate(IDisplay display) {
+        this.display = display;
+    }
 
     @Override
     public Object call() throws Exception {
-        return null; //canal.update(null);
-    }
-
-    @Override
-    public ICanal getCanal() {
-        return this.canal;
-    }
-
-    @Override
-    public void setCanal(ICanal canal) {
-        this.canal = canal;
+        //////////
+        display.update(null);
+        return true;
     }
 }

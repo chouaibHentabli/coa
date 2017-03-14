@@ -16,7 +16,7 @@ import java.util.concurrent.*;
 public class Scheduler {
 
     private Timer timer;
-
+    private ScheduledExecutorService executorService = Executors.newScheduledThreadPool(100);
 
     public Timer getTimer() {
         return timer;
@@ -25,10 +25,18 @@ public class Scheduler {
     public void setTimer(Timer timer) {
         this.timer = timer;
     }
-   /* private Timer timer;
 
-    private ScheduledExecutorService executorService = Executors.newScheduledThreadPool(100);
-    private BlockingQueue queue = new LinkedBlockingQueue<>();
+    public ScheduledExecutorService getExecutorService() {
+        return executorService;
+    }
+
+    public void setExecutorService(ScheduledExecutorService executorService) {
+        this.executorService = executorService;
+    }
+
+    /* private Timer timer;
+
+
 
     public Scheduler(int corePoolSize) {
         super(corePoolSize);
@@ -54,7 +62,6 @@ public class Scheduler {
     }*/
 
 
-
     public void activerPeriodiquement(Command cmd, long periodEnSecondes) {
         this.timer = new Timer();
         PeriodicTask task = new PeriodicTask(cmd);
@@ -62,7 +69,7 @@ public class Scheduler {
     }
 
 
-    public void incrementWithStepByPeriod(CaptorImpl captor, long period, TimeUnit unit) {
+    /*public void incrementWithStepByPeriod(CaptorImpl captor, long period, TimeUnit unit) {
         TimerTask task = new TimerTask() {
             public void run() {
                 double time = 0;
@@ -81,7 +88,7 @@ public class Scheduler {
             }
         };
         timer.schedule(task, unit.toMillis(period), unit.toMillis(period));
-    }
+    }*/
 
 
     public void desactiver() {

@@ -30,6 +30,15 @@ public class Captor extends AbstractCaptor {
     }
 
 
+    @Override
+    public Integer getValue() {
+        return null;
+    }
+
+    @Override
+    public void setValue() {
+
+    }
 
     public void setDiffuseStrategy(DiffusionType type) {
         switch (type) {

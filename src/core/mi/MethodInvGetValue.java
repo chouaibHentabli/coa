@@ -1,6 +1,7 @@
 package core.mi;
 
 import core.canal.ICanal;
+import core.captor.ICaptor;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -11,22 +12,16 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class MethodInvGetValue implements IMethodInvocation {
 
-    private ICanal canal;
+    private ICaptor captor;
     private static BlockingQueue queue = new LinkedBlockingQueue<>();
 
 
+    public MethodInvGetValue(ICaptor captor) {
+        this.captor = captor;
+    }
+
     @Override
     public Object call() throws Exception {
-        return this.canal.getValue();
-    }
-
-    @Override
-    public ICanal getCanal() {
-        return this.canal;
-    }
-
-    @Override
-    public void setCanal(ICanal canal) {
-        this.canal = canal;
+        return this.captor.getValue();
     }
 }

@@ -36,6 +36,6 @@ public class Display implements IDisplay {
 
     @Override
     public void update(ICaptor captor) {
-
+        canal.update(captor);
     }
 }

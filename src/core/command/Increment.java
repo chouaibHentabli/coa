@@ -25,9 +25,8 @@ public class Increment implements Command {
             time = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
         }
         // Increament value in N by 1 and time by 0.01
-        captor.setDiffuseStrategy(captor.getValue() + 1);
-        );
+        //captor.setDiffuseStrategy(captor.getValue() + 1);
+        //);
         captor.tick();
-
-     }
+    }
 }

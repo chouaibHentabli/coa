@@ -1,22 +1,22 @@
 package core.canal;
 
-import core.captor.AbstractCaptor;
 import core.captor.ICaptor;
-import core.difussionStrategy.DiffusionType;
-import core.difussionStrategy.IDiffusionStrategy;
+
 import core.display.Display;
 import core.display.IDisplay;
 import core.mi.IMethodInvocation;
+import core.mi.MethodInvGetValue;
+import core.util.AbstractSubject;
 import core.util.Subject;
 
-import java.util.Observer;
-import java.util.concurrent.Future;
+import java.util.Random;
+import java.util.concurrent.*;
 
 
 /**
  * Created by chouaib on 23/01/17.
  */
-public class Canal implements ICanal {
+public class Canal extends AbstractSubject implements ICanal {
 
     protected String name;
     private ICaptor captor;
@@ -24,7 +24,7 @@ public class Canal implements ICanal {
     private IDisplay display;
     private int delay = 0;
     private static int identifier = 0;
-
+    ScheduledExecutorService executorService = Executors.newScheduledThreadPool(100);
 
     /**
      * Constrcutor
@@ -36,6 +36,7 @@ public class Canal implements ICanal {
         //attach(this);
         this.captor = captor;
         this.display = display;
+        delay = randomDelay()
         System.out.println(this + ".captor = " + captor);
     }
 
@@ -79,24 +80,39 @@ public class Canal implements ICanal {
 
     @Override
     public Future<Integer> getValue() {
-        return null;
-    }
 
+        return executorService.schedule(new MethodInvGetValue(), this.delay, TimeUnit.MILLISECONDS);
+    }
 
     @Override
-    public void tick() {
-        captor.tick();
+    public void update(ICaptor subject) {
+        observers.forEach(observer -> observer.update(this));
     }
-
 
     @Override
     public void update(Subject captor) {
 
     }
 
-    @Override
-    public void update(ICaptor subject) {
+    public Future update() {
+        final IapteurAsynchrone fakeCap = this;
 
+        FutureTask<Boolean> future = new FutureTask<Boolean>(new Callable<Boolean>() {
+            public Boolean call() throws Exception {
+                for (ObserveurDeCap observeur : observeurDeCaps) {
+                    observeur.update((CapteurAsynchrone) fakeCap);
+                }
+
+                return true;
+            }
+        });
+        scheduler.submit(future);
+        return future;
+    }
+
+    @Override
+    public void tick() {
+        captor.tick();
     }
 
     @Override
@@ -107,5 +123,12 @@ public class Canal implements ICanal {
     @Override
     public void detach(core.util.Observer o) {
         captor.detach(o);
+    }
+
+
+    private long randomDelay() {
+        Random random = new Random();
+        return random.nextLong();
+
     }
 }
