@@ -1,6 +1,7 @@
 package core.captor;
 
 import core.util.Subject;
+import core.util.ValuesContainer;
 
 import java.util.concurrent.Future;
 
@@ -11,7 +12,7 @@ import java.util.concurrent.Future;
  */
 public interface IAsyncCaptor extends Subject {
 
-    public Future<Integer> getValue();
+    public Future<ValuesContainer> getValue();
 
     //Future<FutureEpoque> getValueEpoque();
 

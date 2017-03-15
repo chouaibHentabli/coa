@@ -5,6 +5,7 @@ import core.canal.ICanal;
 import core.captor.IAsyncCaptor;
 import core.captor.ICaptor;
 import core.util.Subject;
+import core.util.ValuesContainer;
 import main.Controller;
 
 
@@ -34,8 +35,23 @@ public class Display implements IDisplay {
 
     }
 
+
     @Override
-    public void update(ICaptor captor) {
-        canal.update(captor);
+    public void update(ICaptor subject) {
+        try {
+            ValuesContainer container = canal.getValue().get();
+            String oldValue = String.valueOf(value);
+            value = container.getValue();
+            if (time <= container.getTime()) {
+                time = container.getTime();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (controller != null) {
+            controller.update(this);
+        }
+        System.out.println(this + " receive value=" + value + " with time=" + time);
+        //return true;
     }
 }

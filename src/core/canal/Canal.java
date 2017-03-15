@@ -1,15 +1,12 @@
 package core.canal;
 
 import core.captor.ICaptor;
-
 import core.display.Display;
 import core.display.IDisplay;
-import core.mi.IMethodInvocation;
 import core.mi.MethodInvGetValue;
 import core.util.AbstractSubject;
-import core.util.Subject;
+import core.util.ValuesContainer;
 
-import java.util.Random;
 import java.util.concurrent.*;
 
 
@@ -20,11 +17,10 @@ public class Canal extends AbstractSubject implements ICanal {
 
     protected String name;
     private ICaptor captor;
-    private IMethodInvocation mi;
     private IDisplay display;
     private int delay = 0;
     private static int identifier = 0;
-    ScheduledExecutorService executorService = Executors.newScheduledThreadPool(100);
+    private static ScheduledExecutorService executorService = Executors.newScheduledThreadPool(100);
 
     /**
      * Constrcutor
@@ -33,9 +29,9 @@ public class Canal extends AbstractSubject implements ICanal {
      */
     public Canal(ICaptor captor, IDisplay display) {
         name = "Canal_" + ++identifier;
-        //attach(this);
         this.captor = captor;
         this.display = display;
+        attach(this);
         System.out.println(this + ".captor = " + captor);
     }
 
@@ -78,9 +74,8 @@ public class Canal extends AbstractSubject implements ICanal {
 
 
     @Override
-    public Future<Integer> getValue() {
-
-        return executorService.schedule(new MethodInvGetValue(), this.delay, TimeUnit.MILLISECONDS);
+    public Future<ValuesContainer> getValue() {
+        return executorService.schedule(new MethodInvGetValue(this.captor), this.delay, TimeUnit.MILLISECONDS);
     }
 
     @Override
@@ -88,10 +83,6 @@ public class Canal extends AbstractSubject implements ICanal {
         observers.forEach(observer -> observer.update(this));
     }
 
-    @Override
-    public void update(Subject captor) {
-
-    }
 
     @Override
     public void tick() {
@@ -109,7 +100,7 @@ public class Canal extends AbstractSubject implements ICanal {
     }
 
 
-    public Future update() {
+    /*public Future update() {
         final IaCpteurAsynchrone fakeCap = this;
 
         FutureTask<Boolean> future = new FutureTask<Boolean>(new Callable<Boolean>() {
@@ -123,7 +114,7 @@ public class Canal extends AbstractSubject implements ICanal {
         });
         scheduler.submit(future);
         return future;
-    }
+    }*/
 
 
 }

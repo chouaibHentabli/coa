@@ -1,7 +1,7 @@
 package core.mi;
 
-import core.canal.ICanal;
 import core.captor.ICaptor;
+import core.util.ValuesContainer;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -10,7 +10,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 /**
  * Created by chouaib on 20/02/17.
  */
-public class MethodInvGetValue implements IMethodInvocation {
+public class MethodInvGetValue implements Callable<ValuesContainer> {
 
     private ICaptor captor;
     private static BlockingQueue queue = new LinkedBlockingQueue<>();
@@ -21,7 +21,7 @@ public class MethodInvGetValue implements IMethodInvocation {
     }
 
     @Override
-    public Object call() throws Exception {
+    public ValuesContainer call() throws Exception {
         return this.captor.getValue();
     }
 }

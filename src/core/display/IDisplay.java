@@ -11,5 +11,4 @@ import core.util.Subject;
  */
 public interface IDisplay extends ObservateurDeCapteur {
 
-    void update(Subject captor);
 }
