@@ -36,7 +36,6 @@ public class Canal extends AbstractSubject implements ICanal {
         //attach(this);
         this.captor = captor;
         this.display = display;
-        delay = randomDelay()
         System.out.println(this + ".captor = " + captor);
     }
 
@@ -94,22 +93,6 @@ public class Canal extends AbstractSubject implements ICanal {
 
     }
 
-    public Future update() {
-        final IapteurAsynchrone fakeCap = this;
-
-        FutureTask<Boolean> future = new FutureTask<Boolean>(new Callable<Boolean>() {
-            public Boolean call() throws Exception {
-                for (ObserveurDeCap observeur : observeurDeCaps) {
-                    observeur.update((CapteurAsynchrone) fakeCap);
-                }
-
-                return true;
-            }
-        });
-        scheduler.submit(future);
-        return future;
-    }
-
     @Override
     public void tick() {
         captor.tick();
@@ -126,9 +109,21 @@ public class Canal extends AbstractSubject implements ICanal {
     }
 
 
-    private long randomDelay() {
-        Random random = new Random();
-        return random.nextLong();
+    public Future update() {
+        final IaCpteurAsynchrone fakeCap = this;
 
+        FutureTask<Boolean> future = new FutureTask<Boolean>(new Callable<Boolean>() {
+            public Boolean call() throws Exception {
+                for (ObserveurDeCap observeur : observeurDeCaps) {
+                    observeur.update((CapteurAsynchrone) fakeCap);
+                }
+
+                return true;
+            }
+        });
+        scheduler.submit(future);
+        return future;
     }
+
+
 }
