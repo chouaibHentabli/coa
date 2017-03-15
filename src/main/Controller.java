@@ -199,7 +199,7 @@ public class Controller implements Initializable {
         }
     }
 
-    public void update(Captor captor) {
+    public void update(ICaptor captor) {
         if (valueCaptor != null && timeCaptor != null) {
             valueCaptor.setText(String.valueOf(captor.getValue().getValue()));
             String time = "";

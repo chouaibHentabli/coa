@@ -52,6 +52,11 @@ public class Display implements IDisplay {
     }
 
     @Override
+    public String toString() {
+        return name;
+    }
+
+    @Override
     public void update(ICaptor subject) {
         try {
             ValuesContainer container = canal.getValue().get();

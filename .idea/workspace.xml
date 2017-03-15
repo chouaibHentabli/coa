@@ -2,19 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/util/Horloge.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/util/IHorloge.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/util/Scheduler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/core/util/Horloge.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/core/util/IHorloge.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/core/util/Scheduler.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/canal/Canal.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/core/canal/Canal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/captor/AbstractCaptor.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/core/captor/AbstractCaptor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/captor/Captor.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/core/captor/Captor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/captor/CaptorScheduler$1.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/core/captor/CaptorScheduler$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/captor/CaptorScheduler$2.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/core/captor/CaptorScheduler$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/captor/CaptorScheduler.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/core/captor/CaptorScheduler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/difussionStrategy/SeqDiffusion.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/core/difussionStrategy/SeqDiffusion.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/display/Display.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/core/display/Display.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/display/IDisplay.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/core/display/IDisplay.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/core/mi/MethodInvUpdate.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/core/mi/MethodInvUpdate.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/diffusionservice/main/Controller.class" afterPath="$PROJECT_DIR$/out/production/diffusionservice/main/Controller.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/canal/Canal.java" afterPath="$PROJECT_DIR$/src/core/canal/Canal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/canal/ICanal.java" afterPath="$PROJECT_DIR$/src/core/canal/ICanal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/captor/AbstractCaptor.java" afterPath="$PROJECT_DIR$/src/core/captor/AbstractCaptor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/captor/Captor.java" afterPath="$PROJECT_DIR$/src/core/captor/Captor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/captor/CaptorScheduler.java" afterPath="$PROJECT_DIR$/src/core/captor/CaptorScheduler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/difussionStrategy/SeqDiffusion.java" afterPath="$PROJECT_DIR$/src/core/difussionStrategy/SeqDiffusion.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/display/Display.java" afterPath="$PROJECT_DIR$/src/core/display/Display.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/display/IDisplay.java" afterPath="$PROJECT_DIR$/src/core/display/IDisplay.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/mi/MethodInvUpdate.java" afterPath="$PROJECT_DIR$/src/core/mi/MethodInvUpdate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/util/AbstractSubject.java" afterPath="$PROJECT_DIR$/src/core/util/AbstractSubject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Controller.java" afterPath="$PROJECT_DIR$/src/main/Controller.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -75,31 +84,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/core/display/Display.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MethodInvUpdate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/mi/MethodInvUpdate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MethodInvGetValue.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/core/mi/MethodInvGetValue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state relative-caret-position="252">
+              <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -108,22 +97,82 @@
       <file leaf-file-name="Canal.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/canal/Canal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="91" column="10" selection-start-line="91" selection-start-column="10" selection-end-line="91" selection-end-column="10" />
+            <state relative-caret-position="270">
+              <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1807#1808#0" expanded="true" />
-                <element signature="e#1839#1840#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ICanal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/canal/ICanal.java">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="166" column="37" selection-start-line="166" selection-start-column="37" selection-end-line="166" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Captor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/captor/Captor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IAsyncCaptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/captor/IAsyncCaptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICaptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/captor/ICaptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodInvGetValue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/mi/MethodInvGetValue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaptorScheduler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/captor/CaptorScheduler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodInvUpdate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/mi/MethodInvUpdate.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="41" />
+              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -186,7 +235,6 @@
         <option value="$PROJECT_DIR$/src/resources/interface.fxml" />
         <option value="$PROJECT_DIR$/src/core/util/Horloge.java" />
         <option value="$PROJECT_DIR$/src/core/mi/IMethodInvocation.java" />
-        <option value="$PROJECT_DIR$/src/core/difussionStrategy/SeqDiffusion.java" />
         <option value="$PROJECT_DIR$/src/core/util/CaptorValuesContainer.java" />
         <option value="$PROJECT_DIR$/src/core/captor/IAsyncCaptor.java" />
         <option value="$PROJECT_DIR$/src/core/mi/MethodInvGetValue.java" />
@@ -194,17 +242,18 @@
         <option value="$PROJECT_DIR$/src/core/util/Scheduler.java" />
         <option value="$PROJECT_DIR$/src/core/captor/CaptoScheduler.java" />
         <option value="$PROJECT_DIR$/src/core/captor/ICaptor.java" />
-        <option value="$PROJECT_DIR$/src/core/captor/Captor.java" />
-        <option value="$PROJECT_DIR$/src/core/captor/CaptorScheduler.java" />
         <option value="$PROJECT_DIR$/src/core/command/Increment.java" />
         <option value="$PROJECT_DIR$/src/core/util/ValuesContainer.java" />
         <option value="$PROJECT_DIR$/src/core/difussionStrategy/AbstractDiffusion.java" />
         <option value="$PROJECT_DIR$/src/core/display/IDisplay.java" />
-        <option value="$PROJECT_DIR$/src/main/Controller.java" />
         <option value="$PROJECT_DIR$/src/core/captor/AbstractCaptor.java" />
-        <option value="$PROJECT_DIR$/src/core/display/Display.java" />
         <option value="$PROJECT_DIR$/src/core/util/AbstractSubject.java" />
         <option value="$PROJECT_DIR$/src/core/canal/ICanal.java" />
+        <option value="$PROJECT_DIR$/src/core/display/Display.java" />
+        <option value="$PROJECT_DIR$/src/core/captor/CaptorScheduler.java" />
+        <option value="$PROJECT_DIR$/src/core/difussionStrategy/SeqDiffusion.java" />
+        <option value="$PROJECT_DIR$/src/main/Controller.java" />
+        <option value="$PROJECT_DIR$/src/core/captor/Captor.java" />
         <option value="$PROJECT_DIR$/src/core/mi/MethodInvUpdate.java" />
         <option value="$PROJECT_DIR$/src/core/canal/Canal.java" />
       </list>
@@ -419,10 +468,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="command" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -991,16 +1036,16 @@
       <workItem from="1489438217977" duration="7511000" />
       <workItem from="1489522916723" duration="14407000" />
       <workItem from="1489538278650" duration="9911000" />
-      <workItem from="1489612212601" duration="1125000" />
+      <workItem from="1489612212601" duration="5447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136407000" />
+    <option name="totallyTimeSpent" value="140729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="24" width="1321" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1009,7 +1054,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2690583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2690583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1134,6 +1179,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,17 +1222,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/mi/IMethodInvocation.java" />
-    <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/EpocDiffusion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding>
-            <element signature="e#257#258#0" expanded="false" />
-            <element signature="e#284#285#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/util/Subject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1198,36 +1233,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding>
-            <marker date="1489539576939" expanded="false" signature="731:742" ph=" { " />
-            <marker date="1489539576939" expanded="false" signature="762:768" ph=" }" />
-            <marker date="1489539576939" expanded="false" signature="816:827" ph=" { " />
-            <marker date="1489539576939" expanded="false" signature="841:847" ph=" }" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/util/Material.java" />
-    <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/SeqDiffusion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/DiffusionType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/captor/Captor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="53" column="76" selection-start-line="53" selection-start-column="76" selection-end-line="53" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,60 +1269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/captor/CaptorScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/IDiffusionStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="198" column="9" selection-start-line="198" selection-start-column="9" selection-end-line="198" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/AtomicDiffusion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#323#324#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/captor/AbstractCaptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding>
-            <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/captor/IAsyncCaptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/display/IDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1317,34 +1277,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/AbstractDiffusion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/util/Observer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/captor/ICaptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/util/CaptorValuesContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1376,38 +1312,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/canal/Canal.java">
+    <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/AbstractDiffusion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="91" column="10" selection-start-line="91" selection-start-column="10" selection-end-line="91" selection-end-column="10" />
+        <state relative-caret-position="162">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/IDiffusionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/util/CaptorValuesContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/captor/AbstractCaptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1807#1808#0" expanded="true" />
-            <element signature="e#1839#1840#0" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#715#716#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/display/Display.java">
+    <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/SeqDiffusion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="166" column="37" selection-start-line="166" selection-start-column="37" selection-end-line="166" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/EpocDiffusion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/difussionStrategy/AtomicDiffusion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/captor/CaptorScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/mi/MethodInvGetValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/mi/MethodInvUpdate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="288">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/mi/MethodInvGetValue.java">
+    <entry file="file://$PROJECT_DIR$/src/core/captor/ICaptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="243">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/captor/IAsyncCaptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/captor/Captor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/canal/Canal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/display/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
           <folding />
         </state>
       </provider>

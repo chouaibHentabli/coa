@@ -1,6 +1,7 @@
 package core.mi;
 
 import core.canal.ICanal;
+import core.captor.IAsyncCaptor;
 import core.captor.ICaptor;
 import core.display.IDisplay;
 import core.util.ValuesContainer;
@@ -15,17 +16,17 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class MethodInvUpdate implements Callable {
 
-    private ICanal canal;
-    private static BlockingQueue queue = new LinkedBlockingQueue<>();
+    private IDisplay display;
 
 
-    public MethodInvUpdate(ICanal canal) {
-        this.canal = canal;
+    public MethodInvUpdate(IDisplay display) {
+        this.display = display;
     }
 
     @Override
-    public Object call() throws Exception {
-        canal.getObservers().forEach(observer -> observer.update(this));
+    public Boolean call() throws Exception {
+        IAsyncCaptor asyncCaptor = (IAsyncCaptor) display;
+        display.update((ICaptor) asyncCaptor);
         return true;
     }
 }

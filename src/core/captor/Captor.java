@@ -53,6 +53,4 @@ public class Captor extends AbstractCaptor {
         }
         System.out.println("Tick with " + diffuseStrategy.getDiffusionType() + "with value " + value);
     }
-
-
 }

@@ -1,5 +1,6 @@
 package core.canal;
 
+import core.captor.IAsyncCaptor;
 import core.captor.ICaptor;
 import core.display.Display;
 import core.display.IDisplay;
@@ -72,8 +73,12 @@ public class Canal extends AbstractSubject implements ICanal {
         this.display = display;
     }
 
+    /**
+     * Configure the transmission delay in milliseconds
+     */
     public void setDelay(int delay) {
         this.delay = delay;
+        System.out.println(this + ".delay = " + delay);
     }
 
     @Override
@@ -88,7 +93,7 @@ public class Canal extends AbstractSubject implements ICanal {
 
     @Override
     public void update(ICaptor subject) {
-        executorServiceDisplay.submit(new MethodInvUpdate(this));
+        executorServiceDisplay.submit(new MethodInvUpdate(display));
         //return future;
     }
 

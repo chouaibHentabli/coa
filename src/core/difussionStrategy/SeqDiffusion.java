@@ -21,8 +21,13 @@ public class SeqDiffusion extends AbstractDiffusion {
         super(type);
     }
 
-
-    @Override
+    /**
+     * Sequential calls
+     * <p>
+     * All calls are processed once. Loosing next calls if not finished
+     * <p>
+     * Data can be lost.
+     */
     public void execute() {
         if (queue.isEmpty()) {
             executorService.submit(() -> observers.forEach(observer -> observer.update(captor)));

@@ -2,8 +2,6 @@ package core.captor;
 
 import core.difussionStrategy.DiffusionType;
 import core.util.CaptorValuesContainer;
-import core.util.ValuesContainer;
-
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Timer;
