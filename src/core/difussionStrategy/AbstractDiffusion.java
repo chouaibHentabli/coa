@@ -29,11 +29,6 @@ public class AbstractDiffusion implements IDiffusionStrategy {
     }
 
     @Override
-    public void execute() {
-
-    }
-
-    @Override
     public DiffusionType getDiffusionType() {
         return type;
     }
@@ -43,23 +38,22 @@ public class AbstractDiffusion implements IDiffusionStrategy {
         this.type = type;
     }
 
-    @Override
-    public DiffusionType getDiffuseStrategy() {
-        return null;
-    }
-
 
     @Override
     public ValuesContainer getValue() {
-        return null;
+        return captor.getValue();
     }
 
     @Override
     public ValuesContainer setValue(ValuesContainer value) {
-        return null;
+        return captor.setValue(value);
     }
 
 
+    @Override
+    public String toString() {
+        return "DiffusionStrategy[" + type + "]";
+    }
 
     @Override
     public void tick() {
@@ -75,4 +69,15 @@ public class AbstractDiffusion implements IDiffusionStrategy {
     public void detach(Observer o) {
 
     }
+
+    @Override
+    public IDiffusionStrategy getDiffuseStrategy() {
+        return null;
+    }
+
+    @Override
+    public void execute() {
+
+    }
+
 }

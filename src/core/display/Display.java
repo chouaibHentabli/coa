@@ -20,7 +20,7 @@ public class Display implements IDisplay {
     protected String name;
     private Integer value = 0;
     private Double time = 0.0;
-    //lien proxy
+    //proxy
     private ICanal canal;
     private static int identifier = 0;
 

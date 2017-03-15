@@ -4,6 +4,7 @@ import core.canal.Canal;
 import core.canal.ICanal;
 import core.captor.AbstractCaptor;
 import core.captor.Captor;
+import core.captor.CaptorScheduler;
 import core.captor.ICaptor;
 import core.difussionStrategy.DiffusionType;
 import core.display.Display;
@@ -88,7 +89,7 @@ public class Controller implements Initializable {
     Display displayE = new Display(this);
     AbstractCaptor captor;
 
-    Scheduler scheduler;
+    CaptorScheduler captorScheduler = new CaptorScheduler(1, 1500, 1);
 
     public Controller() {
         captor = new Captor(this);
@@ -155,7 +156,8 @@ public class Controller implements Initializable {
 
 
     private void reinitCaptor() {
-        //scheduler.incrementWithStepByPeriod(captor, Integer.parseInt(delay.getText()), TimeUnit.MILLISECONDS);
+        captorScheduler.purge();
+        captorScheduler.incrementWithStepByPeriod(captor, Integer.parseInt(delay.getText()), TimeUnit.MILLISECONDS);
     }
 
     public void update(Display display) {
@@ -198,10 +200,10 @@ public class Controller implements Initializable {
 
     public void update(Captor captor) {
         if (valueCaptor != null && timeCaptor != null) {
-            valueCaptor.setText(String.valueOf(captor.getValues().getValue()));
+            valueCaptor.setText(String.valueOf(captor.getValue().getValue()));
             String time = "";
-            if (captor.getValues().getTime() != 0 && captor.getValues().getTime() > 500) {
-                time = formatDate(captor.getValues().getTime().longValue());
+            if (captor.getValue().getTime() != 0 && captor.getValue().getTime() > 500) {
+                time = formatDate(captor.getValue().getTime().longValue());
             } else {
                 time = "1000";
             }

@@ -21,7 +21,7 @@ public class Increment implements Command {
     @Override
     public void execute() {
         double time = 0;
-        if (captor.getDiffuseStrategy() == DiffusionType.ATOMIC) {
+        if (captor.getDiffuseStrategy().getDiffusionType() == DiffusionType.ATOMIC) {
             time = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
         }
         // Increament value in N by 1 and time by 0.01

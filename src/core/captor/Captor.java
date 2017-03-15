@@ -26,20 +26,7 @@ public class Captor extends AbstractCaptor {
     }
 
 
-    public DiffusionType getDiffuseStrategy() {
-        return null;
-    }
 
-
-    @Override
-    public ValuesContainer getValue() {
-        return value;
-    }
-
-    @Override
-    public ValuesContainer setValue(ValuesContainer value) {
-        return value = value;
-    }
 
     public void setDiffuseStrategy(DiffusionType type) {
         switch (type) {
@@ -56,13 +43,15 @@ public class Captor extends AbstractCaptor {
         diffuseStrategy.configure(this, observers);
     }
 
+
+
     @Override
     public void tick() {
         diffuseStrategy.execute();
         if (controller != null) {
             controller.update(this);
         }
-        System.out.println("Tick with " + getDiffuseStrategy() + "with value " + value);
+        System.out.println("Tick with " + diffuseStrategy.getDiffusionType() + "with value " + value);
     }
 
 

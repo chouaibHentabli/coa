@@ -22,5 +22,5 @@ public interface ICaptor extends Subject {
 
     public void setDiffuseStrategy(DiffusionType type);
 
-    public DiffusionType getDiffuseStrategy();
+    public IDiffusionStrategy getDiffuseStrategy();
 }
