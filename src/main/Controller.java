@@ -8,6 +8,7 @@ import core.captor.CaptorScheduler;
 import core.captor.ICaptor;
 import core.difussionStrategy.DiffusionType;
 import core.display.Display;
+import core.display.IDisplay;
 import core.util.Scheduler;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -160,7 +161,7 @@ public class Controller implements Initializable {
         captorScheduler.incrementWithStepByPeriod(captor, Integer.parseInt(delay.getText()), TimeUnit.MILLISECONDS);
     }
 
-    public void update(Display display) {
+    public void update(IDisplay display) {
         String value = String.valueOf(display.getValue());
         String time = "";
         if (display.getTime() != 0) {

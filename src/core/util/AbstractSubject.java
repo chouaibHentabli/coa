@@ -12,6 +12,7 @@ public class AbstractSubject implements Subject {
 
     protected List<Observer> observers = new ArrayList<Observer>();
 
+
     @Override
     public void attach(Observer observer) {
         observers.add(observer);

@@ -4,9 +4,12 @@ import core.captor.ICaptor;
 import core.display.Display;
 import core.display.IDisplay;
 import core.mi.MethodInvGetValue;
+import core.mi.MethodInvUpdate;
 import core.util.AbstractSubject;
+import core.util.Observer;
 import core.util.ValuesContainer;
 
+import java.util.List;
 import java.util.concurrent.*;
 
 
@@ -20,7 +23,8 @@ public class Canal extends AbstractSubject implements ICanal {
     private IDisplay display;
     private int delay = 0;
     private static int identifier = 0;
-    private static ScheduledExecutorService executorService = Executors.newScheduledThreadPool(100);
+    private static ScheduledExecutorService executorServiceCaptor = Executors.newScheduledThreadPool(50);
+    private static ScheduledExecutorService executorServiceDisplay = Executors.newScheduledThreadPool(50);
 
     /**
      * Constrcutor
@@ -72,15 +76,20 @@ public class Canal extends AbstractSubject implements ICanal {
         this.delay = delay;
     }
 
+    @Override
+    public List<Observer> getObservers() {
+        return observers;
+    }
 
     @Override
     public Future<ValuesContainer> getValue() {
-        return executorService.schedule(new MethodInvGetValue(this.captor), this.delay, TimeUnit.MILLISECONDS);
+        return executorServiceCaptor.schedule(new MethodInvGetValue(this.captor), this.delay, TimeUnit.MILLISECONDS);
     }
 
     @Override
     public void update(ICaptor subject) {
-        observers.forEach(observer -> observer.update(this));
+        executorServiceDisplay.submit(new MethodInvUpdate(this));
+        //return future;
     }
 
 
@@ -99,22 +108,10 @@ public class Canal extends AbstractSubject implements ICanal {
         captor.detach(o);
     }
 
-
-    /*public Future update() {
-        final IaCpteurAsynchrone fakeCap = this;
-
-        FutureTask<Boolean> future = new FutureTask<Boolean>(new Callable<Boolean>() {
-            public Boolean call() throws Exception {
-                for (ObserveurDeCap observeur : observeurDeCaps) {
-                    observeur.update((CapteurAsynchrone) fakeCap);
-                }
-
-                return true;
-            }
-        });
-        scheduler.submit(future);
-        return future;
-    }*/
+    @Override
+    public String toString() {
+        return name;
+    }
 
 
 }

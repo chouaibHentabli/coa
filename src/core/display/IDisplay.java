@@ -11,4 +11,8 @@ import core.util.Subject;
  */
 public interface IDisplay extends ObservateurDeCapteur {
 
+    public Double getTime();
+
+    public Integer getValue();
+
 }

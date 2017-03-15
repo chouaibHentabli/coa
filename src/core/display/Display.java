@@ -8,6 +8,9 @@ import core.util.Subject;
 import core.util.ValuesContainer;
 import main.Controller;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+
 
 /**
  * Created by chouaib on 19/02/17.
@@ -16,13 +19,15 @@ import main.Controller;
  */
 public class Display implements IDisplay {
 
-    private final Controller controller;
+
     protected String name;
     private Integer value = 0;
     private Double time = 0.0;
     //proxy
     private ICanal canal;
     private static int identifier = 0;
+    private final Controller controller;
+
 
     public Display(Controller controller) {
         this.controller = controller;
@@ -43,7 +48,6 @@ public class Display implements IDisplay {
     }
 
     public Integer getValue() {
-
         return value;
     }
 
@@ -63,6 +67,7 @@ public class Display implements IDisplay {
             controller.update(this);
         }
         System.out.println(this + " receive value=" + value + " with time=" + time);
-        //return true;
     }
+
+
 }
