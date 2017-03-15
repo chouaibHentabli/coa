@@ -9,7 +9,6 @@ import core.captor.ICaptor;
 import core.difussionStrategy.DiffusionType;
 import core.display.Display;
 import core.display.IDisplay;
-import core.util.Scheduler;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,12 +18,10 @@ import javafx.scene.text.Text;
 
 
 import java.net.URL;
-import java.text.DecimalFormat;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
-import java.util.Observer;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 

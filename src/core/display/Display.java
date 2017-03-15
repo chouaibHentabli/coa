@@ -57,7 +57,7 @@ public class Display implements IDisplay {
     }
 
     @Override
-    public void update(ICaptor subject) {
+    public Void update(ICaptor subject) {
         try {
             ValuesContainer container = canal.getValue().get();
             String oldValue = String.valueOf(value);
@@ -72,6 +72,8 @@ public class Display implements IDisplay {
             controller.update(this);
         }
         System.out.println(this + " receive value=" + value + " with time=" + time);
+
+        return null;
     }
 
 

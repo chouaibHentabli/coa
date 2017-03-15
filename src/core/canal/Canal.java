@@ -1,6 +1,5 @@
 package core.canal;
 
-import core.captor.IAsyncCaptor;
 import core.captor.ICaptor;
 import core.display.Display;
 import core.display.IDisplay;
@@ -92,9 +91,9 @@ public class Canal extends AbstractSubject implements ICanal {
     }
 
     @Override
-    public void update(ICaptor subject) {
-        executorServiceDisplay.submit(new MethodInvUpdate(display));
-        //return future;
+    public Void update(ICaptor subject) {
+        executorServiceDisplay.submit(new MethodInvUpdate(this));
+        return null;
     }
 
 

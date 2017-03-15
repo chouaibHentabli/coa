@@ -15,10 +15,10 @@ import java.util.List;
 
 public interface ICanal extends ObservateurDeCapteur, IAsyncCaptor {
 
-    public void setDelay(int delay);
+    void setDelay(int delay);
 
-    public int getDelay();
+    int getDelay();
 
-    public List<Observer> getObservers();
+    List<Observer> getObservers();
 
 }

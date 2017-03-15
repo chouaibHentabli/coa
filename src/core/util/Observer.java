@@ -2,7 +2,7 @@ package core.util;
 
 /**
  * Created by chouaib on 23/01/17.
- *
+ * <p>
  * Service
  */
 
@@ -13,5 +13,5 @@ public interface Observer<T> {
      *
      * @param subject
      */
-    void update(T subject);
+    Void update(T subject);
 }

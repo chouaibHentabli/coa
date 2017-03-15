@@ -16,17 +16,16 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class MethodInvUpdate implements Callable {
 
-    private IDisplay display;
+    private ICanal canal;
 
 
-    public MethodInvUpdate(IDisplay display) {
-        this.display = display;
+    public MethodInvUpdate(ICanal canal) {
+        this.canal = canal;
     }
 
     @Override
     public Boolean call() throws Exception {
-        IAsyncCaptor asyncCaptor = (IAsyncCaptor) display;
-        display.update((ICaptor) asyncCaptor);
+        canal.getObservers().forEach(observer -> observer.update(canal));
         return true;
     }
 }
