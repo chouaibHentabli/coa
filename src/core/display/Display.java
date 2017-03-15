@@ -30,11 +30,22 @@ public class Display implements IDisplay {
     }
 
 
-    @Override
-    public void update(Subject captor) {
-
+    public Double getTime() {
+        return time;
     }
 
+    public void setTime(Double time) {
+        this.time = time;
+    }
+
+    public void setValue(Integer value) {
+        this.value = value;
+    }
+
+    public Integer getValue() {
+
+        return value;
+    }
 
     @Override
     public void update(ICaptor subject) {

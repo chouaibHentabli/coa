@@ -2,6 +2,7 @@ package core.difussionStrategy;
 
 import core.captor.ICaptor;
 import core.util.Observer;
+import core.util.ValuesContainer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,14 +50,16 @@ public class AbstractDiffusion implements IDiffusionStrategy {
 
 
     @Override
-    public Integer getValue() {
+    public ValuesContainer getValue() {
         return null;
     }
 
     @Override
-    public void setValue() {
-
+    public ValuesContainer setValue(ValuesContainer value) {
+        return null;
     }
+
+
 
     @Override
     public void tick() {
@@ -65,7 +68,7 @@ public class AbstractDiffusion implements IDiffusionStrategy {
 
     @Override
     public void attach(Observer o) {
-        
+
     }
 
     @Override

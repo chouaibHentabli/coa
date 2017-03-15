@@ -2,13 +2,15 @@ package core.mi;
 
 import core.display.IDisplay;
 
+import java.util.Calendar;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Callable;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by chouaib on 20/02/17.
  */
-public class MethodInvUpdate implements IMethodInvocation {
+public class MethodInvUpdate implements Callable {
 
     private IDisplay display;
     private static BlockingQueue queue = new LinkedBlockingQueue<>();
@@ -20,7 +22,6 @@ public class MethodInvUpdate implements IMethodInvocation {
 
     @Override
     public Object call() throws Exception {
-        //////////
         display.update(null);
         return true;
     }

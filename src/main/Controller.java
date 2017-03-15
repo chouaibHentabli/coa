@@ -155,7 +155,7 @@ public class Controller implements Initializable {
 
 
     private void reinitCaptor() {
-        scheduler.incrementWithStepByPeriod(captor, Integer.parseInt(delay.getText()), TimeUnit.MILLISECONDS);
+        //scheduler.incrementWithStepByPeriod(captor, Integer.parseInt(delay.getText()), TimeUnit.MILLISECONDS);
     }
 
     public void update(Display display) {

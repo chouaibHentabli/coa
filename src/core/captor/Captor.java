@@ -3,6 +3,7 @@ package core.captor;
 import core.canal.ICanal;
 import core.difussionStrategy.*;
 import core.util.AbstractSubject;
+import core.util.ValuesContainer;
 import main.Controller;
 
 import java.util.AbstractCollection;
@@ -31,13 +32,13 @@ public class Captor extends AbstractCaptor {
 
 
     @Override
-    public Integer getValue() {
-        return null;
+    public ValuesContainer getValue() {
+        return value;
     }
 
     @Override
-    public void setValue() {
-
+    public ValuesContainer setValue(ValuesContainer value) {
+        return value = value;
     }
 
     public void setDiffuseStrategy(DiffusionType type) {
@@ -53,6 +54,15 @@ public class Captor extends AbstractCaptor {
                 break;
         }
         diffuseStrategy.configure(this, observers);
+    }
+
+    @Override
+    public void tick() {
+        diffuseStrategy.execute();
+        if (controller != null) {
+            controller.update(this);
+        }
+        System.out.println("Tick with " + getDiffuseStrategy() + "with value " + value);
     }
 
 

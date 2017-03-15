@@ -12,7 +12,7 @@ public interface ICaptor extends Subject {
 
     public ValuesContainer getValue();
 
-    public ValuesContainer setValue();
+    public ValuesContainer setValue(ValuesContainer value);
 
 
     /**
