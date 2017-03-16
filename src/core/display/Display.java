@@ -26,7 +26,7 @@ public class Display implements Observer<IAsyncCaptor> {
 
     public Void update(IAsyncCaptor captor) {
         try {
-            ValuesContainer container = captor.getValue().get();
+            ValuesContainer container = captor.getValues().get();
             String oldValue = String.valueOf(value);
             value = container.getValue();
             if (time <= container.getTime()) {

@@ -5,17 +5,22 @@ import core.util.Observer;
 
 import java.util.List;
 
+
+
 /**
- * Created by chouaib on 19/02/17.
+ * Created by chouaib on 15/03/17.
  */
 public interface IDiffusionStrategy {
+
     /**
-     * Prepare  the necesserary for a complete working algo
+     * Prepare all the necesserary for a complete working algo
+     *
      */
-    void configure(ICaptor captor, List<Observer> observers);
+    void configure(ICaptor captor, List<Observer> clients);
 
     /**
      * Execute the algo with parameters specified inside the configure method
+     *
      */
     void execute();
 

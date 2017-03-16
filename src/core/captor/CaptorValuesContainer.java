@@ -1,7 +1,9 @@
-package core.util;
+package core.captor;
+
+import core.util.ValuesContainer;
 
 /**
- * Created by blacknight on 13/03/16.
+ * Created by chouaib on 20/02/17.
  */
 public class CaptorValuesContainer implements ValuesContainer {
 

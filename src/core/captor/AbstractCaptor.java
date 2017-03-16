@@ -1,24 +1,24 @@
 package core.captor;
 
-import core.difussionStrategy.DiffusionType;
-import core.difussionStrategy.IDiffusionStrategy;
-import core.util.AbstractSubject;
-import core.util.CaptorValuesContainer;
-import core.util.ValuesContainer;
-import main.Controller;
+import core.util.*;
 
 /**
- * Created by chouaib on 21/02/17.
+ * Created by chouaib on 20/02/17.
  */
 public abstract class AbstractCaptor extends AbstractSubject implements ICaptor {
 
     protected String name;
-    protected ValuesContainer value = new CaptorValuesContainer(0, 0.0);
-    protected IDiffusionStrategy diffuseStrategy;
+    protected ValuesContainer values = new CaptorValuesContainer(0, 0.0);
+
     private static int identifier = 0;
 
     public AbstractCaptor() {
         name = "Capteur_" + ++identifier;
+    }
+
+    @Override
+    public ValuesContainer getValues() {
+        return values;
     }
 
     @Override
@@ -27,17 +27,7 @@ public abstract class AbstractCaptor extends AbstractSubject implements ICaptor 
     }
 
     @Override
-    public ValuesContainer getValue() {
-        return value;
-    }
-
-    @Override
-    public ValuesContainer setValue(ValuesContainer value) {
-        return value = value;
-    }
-
-    @Override
-    public IDiffusionStrategy getDiffuseStrategy() {
-        return diffuseStrategy;
+    public void setValues(ValuesContainer valuesContainer) {
+        values = valuesContainer;
     }
 }

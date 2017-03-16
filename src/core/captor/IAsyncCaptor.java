@@ -1,15 +1,15 @@
 package core.captor;
 
+
 import core.util.Subject;
 import core.util.ValuesContainer;
 
 import java.util.concurrent.Future;
 
 /**
- * Created by chouaib on 19/02/17.
- * <p>
- * Service
+ * Created by chouaib on 20/02/17.
  */
+
 public interface IAsyncCaptor extends Subject {
 
     /**
@@ -17,11 +17,10 @@ public interface IAsyncCaptor extends Subject {
      *
      * @return
      */
-    Future<ValuesContainer> getValue();
+    Future<ValuesContainer> getValues();
 
     /**
      * Send a request for value updates to each observers
-     *
      */
     void tick();
 }

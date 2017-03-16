@@ -1,7 +1,6 @@
 package core.captor;
 
 import core.difussionStrategy.DiffusionType;
-import core.util.CaptorValuesContainer;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -10,9 +9,10 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by chouaib on 15/03/17.
+ * Allow to manage the value computation of a captor
  */
 public class CaptorScheduler {
+
     private Timer timer = new Timer();
     private int max;
     private int min;
@@ -38,21 +38,22 @@ public class CaptorScheduler {
      * @param period
      * @param unit
      */
-    public void incrementWithStepByPeriod(ICaptor captor, long period, TimeUnit unit) {
+    public void incrementWithStepByPeriod(Captor captor, long period, TimeUnit unit) {
         TimerTask task = new TimerTask() {
             public void run() {
                 double time = 0;
-                //System.err.println(captor.getDiffuseStrategy());
-                if (captor.getDiffuseStrategy().getDiffusionType() == DiffusionType.EPOC) {
+                if (captor.getDiffusionStrategy().getDiffusionType() == DiffusionType.EPOC) {
                     time = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
                 }
 
-                int newValue = captor.getValue().getValue() + step;
+                int newValue = captor.getValues().getValue() + step;
                 if (newValue >= max) {
                     newValue = min;
                 }
                 System.err.println(newValue);
-                captor.setValue(new CaptorValuesContainer(newValue, time));
+                captor.setValues(
+                        new CaptorValuesContainer(newValue, time)
+                );
                 captor.tick();
             }
         };
@@ -66,15 +67,15 @@ public class CaptorScheduler {
      * @param period
      * @param unit
      */
-    public void randomIncrementByPeriod(ICaptor captor, long period, TimeUnit unit) {
+    public void randomIncrementByPeriod(Captor captor, long period, TimeUnit unit) {
         TimerTask task = new TimerTask() {
             public void run() {
                 double time = 0;
-                if (captor.getDiffuseStrategy().getDiffusionType() == DiffusionType.EPOC) {
+                if (captor.getDiffusionStrategy().getDiffusionType() == DiffusionType.EPOC) {
                     time = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
                 }
-
-                captor.setValue(
+                // Increament value in N by 1 and time by 0.01
+                captor.setValues(
                         new CaptorValuesContainer((int) (Math.random() * (max - min) + min), time)
                 );
                 captor.tick();
@@ -92,4 +93,3 @@ public class CaptorScheduler {
         timer = new Timer();
     }
 }
-

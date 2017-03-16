@@ -70,49 +70,47 @@ public class Controller implements Initializable {
     @FXML
     TextField delay;
 
-
     Canal canalA;
     Canal canalB;
     Canal canalC;
     Canal canalD;
     Canal canalE;
-
+    Captor captor = new Captor(this);
     Display displayA = new Display(this);
     Display displayB = new Display(this);
     Display displayC = new Display(this);
     Display displayD = new Display(this);
     Display displayE = new Display(this);
+    CaptorScheduler scheduler = new CaptorScheduler(1, 1500, 1);
 
-    Captor captor = new Captor(this);
-    CaptorScheduler captorScheduler = new CaptorScheduler(1, 1500, 1);
 
     public Controller() {
-
     }
 
     @FXML
     public void setAtomicDiffusion(Event event) {
-        captor.setDiffuseStrategy(DiffusionType.ATOMIC);
+        captor.setDiffusionStrategy(DiffusionType.ATOMIC);
+        System.err.println("c2 => " + captor.getDiffusionStrategy());
+
         reinitCaptor();
     }
 
     @FXML
     public void setSequentialDiffusion(Event event) {
-        captor.setDiffuseStrategy(DiffusionType.SEQUENTIAL);
+        captor.setDiffusionStrategy(DiffusionType.SEQUENTIAL);
         reinitCaptor();
     }
 
     @FXML
     public void setEpocDiffusion(Event event) {
-        captor.setDiffuseStrategy(DiffusionType.EPOC);
+        captor.setDiffusionStrategy(DiffusionType.EPOC);
         reinitCaptor();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        captor.setDiffuseStrategy(DiffusionType.ATOMIC);
-        System.err.println(captor.getDiffuseStrategy());
+        captor.setDiffusionStrategy(DiffusionType.ATOMIC);
 
         canalA = new Canal(captor);
         canalA.setDelay(Integer.parseInt(canalDelayA.getText()));
@@ -144,10 +142,9 @@ public class Controller implements Initializable {
         reinitCaptor();
     }
 
-
     private void reinitCaptor() {
-        captorScheduler.purge();
-        captorScheduler.incrementWithStepByPeriod(captor, Integer.parseInt(delay.getText()), TimeUnit.MILLISECONDS);
+        scheduler.purge();
+        scheduler.incrementWithStepByPeriod(captor, Integer.parseInt(delay.getText()), TimeUnit.MILLISECONDS);
     }
 
     public void update(Display display) {
@@ -190,10 +187,10 @@ public class Controller implements Initializable {
 
     public void update(ICaptor captor) {
         if (valueCaptor != null && timeCaptor != null) {
-            valueCaptor.setText(String.valueOf(captor.getValue().getValue()));
+            valueCaptor.setText(String.valueOf(captor.getValues().getValue()));
             String time = "";
-            if (captor.getValue().getTime() != 0 && captor.getValue().getTime() > 500) {
-                time = formatDate(captor.getValue().getTime().longValue());
+            if (captor.getValues().getTime() != 0 && captor.getValues().getTime() > 500) {
+                time = formatDate(captor.getValues().getTime().longValue());
             } else {
                 time = "1000";
             }

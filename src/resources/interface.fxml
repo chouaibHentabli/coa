@@ -9,17 +9,17 @@
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="main.Controller">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9fe9f8" height="113.0" layoutX="170.0" layoutY="117.0"
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f6f7" height="113.0" layoutX="170.0" layoutY="117.0"
                    stroke="BLACK" strokeType="INSIDE" width="165.0"/>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2aaf5" height="113.0" layoutX="5.0" layoutY="117.0"
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f6f7" height="113.0" layoutX="5.0" layoutY="117.0"
                    stroke="BLACK" strokeType="INSIDE" width="165.0"/>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8d87" height="113.0" layoutX="5.0" layoutY="230.0"
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f6f7" height="113.0" layoutX="5.0" layoutY="230.0"
                    stroke="BLACK" strokeType="INSIDE" width="165.0"/>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7cc0ff" height="113.0" layoutX="5.0" layoutY="4.0"
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f6f7" height="113.0" layoutX="5.0" layoutY="4.0"
                    stroke="BLACK" strokeType="INSIDE" width="165.0"/>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1ffbd" height="113.0" layoutX="170.0" layoutY="4.0"
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f6f7" height="113.0" layoutX="170.0" layoutY="4.0"
                    stroke="BLACK" strokeType="INSIDE" width="165.0"/>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="244.0" layoutX="170.0" layoutY="230.0"
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f6f7" height="244.0" layoutX="170.0" layoutY="230.0"
                    stroke="BLACK" strokeType="INSIDE" width="165.0"/>
         <Text fx:id="valueA" layoutX="14.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0"
               textAlignment="RIGHT">
