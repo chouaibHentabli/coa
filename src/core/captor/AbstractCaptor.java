@@ -40,6 +40,4 @@ public abstract class AbstractCaptor extends AbstractSubject implements ICaptor 
     public IDiffusionStrategy getDiffuseStrategy() {
         return diffuseStrategy;
     }
-
-
 }

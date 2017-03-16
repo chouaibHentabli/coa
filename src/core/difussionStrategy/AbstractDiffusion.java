@@ -29,55 +29,19 @@ public class AbstractDiffusion implements IDiffusionStrategy {
     }
 
     @Override
+    public void execute() {
+
+    }
+
+    @Override
     public DiffusionType getDiffusionType() {
-        return type;
+        return this.type;
     }
-
-    @Override
-    public void setDiffuseStrategy(DiffusionType type) {
-        this.type = type;
-    }
-
-
-    @Override
-    public ValuesContainer getValue() {
-        return captor.getValue();
-    }
-
-    @Override
-    public ValuesContainer setValue(ValuesContainer value) {
-        return captor.setValue(value);
-    }
-
 
     @Override
     public String toString() {
         return "DiffusionStrategy[" + type + "]";
     }
 
-    @Override
-    public void tick() {
-
-    }
-
-    @Override
-    public void attach(Observer o) {
-
-    }
-
-    @Override
-    public void detach(Observer o) {
-
-    }
-
-    @Override
-    public IDiffusionStrategy getDiffuseStrategy() {
-        return null;
-    }
-
-    @Override
-    public void execute() {
-
-    }
 
 }

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by chouaib on 19/02/17.
  */
-public interface IDiffusionStrategy extends ICaptor {
+public interface IDiffusionStrategy {
     /**
      * Prepare  the necesserary for a complete working algo
      */

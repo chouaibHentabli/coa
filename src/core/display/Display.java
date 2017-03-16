@@ -1,15 +1,9 @@
 package core.display;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-import core.canal.ICanal;
-import core.captor.IAsyncCaptor;
-import core.captor.ICaptor;
-import core.util.Subject;
+ import core.captor.IAsyncCaptor;
+ import core.util.Observer;
 import core.util.ValuesContainer;
 import main.Controller;
-
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 
 
 /**
@@ -17,13 +11,14 @@ import java.util.concurrent.ScheduledExecutorService;
  * <p>
  * servant
  */
-public class Display implements IDisplay {
+public class Display implements Observer<IAsyncCaptor> {
+
 
     protected String name;
     private Integer value = 0;
     private Double time = 0.0;
     //proxy
-    private ICanal canal;
+    //private ICanal canal;
     private static int identifier = 0;
     private final Controller controller;
 
@@ -58,7 +53,8 @@ public class Display implements IDisplay {
     @Override
     public Void update(IAsyncCaptor subject) {
         try {
-            ValuesContainer container = canal.getValue().get();
+            ValuesContainer container = subject.getValue().get();
+            System.err.println(container.getValue());
             String oldValue = String.valueOf(value);
             value = container.getValue();
             if (time <= container.getTime()) {

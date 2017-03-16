@@ -1,15 +1,12 @@
 package core.captor;
 
-import core.canal.ICanal;
-import core.difussionStrategy.*;
-import core.util.AbstractSubject;
-import core.util.ValuesContainer;
-import main.Controller;
+ import core.canal.Canal;
+ import core.difussionStrategy.*;
+  import main.Controller;
 
-import java.util.AbstractCollection;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observer;
+ import java.util.ArrayList;
+ import java.util.List;
+
 
 /**
  * Created by chouaib on 20/02/17.
@@ -18,14 +15,13 @@ import java.util.Observer;
  */
 public class Captor extends AbstractCaptor {
 
-    private List<ICanal> canals = new ArrayList<ICanal>();
+    private List<Canal> canals = new ArrayList<Canal>();
     private Controller controller;
 
     public Captor(Controller controller) {
+        System.out.println(this + " initialized");
         this.controller = controller;
     }
-
-
 
 
     public void setDiffuseStrategy(DiffusionType type) {
@@ -42,7 +38,6 @@ public class Captor extends AbstractCaptor {
         }
         diffuseStrategy.configure(this, observers);
     }
-
 
 
     @Override

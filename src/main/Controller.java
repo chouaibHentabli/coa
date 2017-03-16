@@ -1,14 +1,10 @@
 package main;
 
 import core.canal.Canal;
-import core.canal.ICanal;
-import core.captor.AbstractCaptor;
 import core.captor.Captor;
 import core.captor.CaptorScheduler;
-import core.captor.ICaptor;
 import core.difussionStrategy.DiffusionType;
 import core.display.Display;
-import core.display.IDisplay;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -114,31 +110,25 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        // Define the strategy and launch the captor processor
         captor.setDiffuseStrategy(DiffusionType.ATOMIC);
 
-        // First canal
-        canalA = new Canal(captor, displayA);
+        canalA = new Canal(captor);
         canalA.setDelay(Integer.parseInt(canalDelayA.getText()));
         canalA.attach(displayA);
 
-        // Second canal
-        canalB = new Canal(captor, displayB);
+        canalB = new Canal(captor);
         canalB.setDelay(Integer.parseInt(canalDelayB.getText()));
         canalB.attach(displayB);
 
-        // Third canal
-        canalC = new Canal(captor, displayC);
+        canalC = new Canal(captor);
         canalC.setDelay(Integer.parseInt(canalDelayC.getText()));
         canalC.attach(displayC);
 
-        // Fourth canal
-        canalD = new Canal(captor, displayD);
+        canalD = new Canal(captor);
         canalD.setDelay(Integer.parseInt(canalDelayD.getText()));
         canalD.attach(displayD);
 
-        // Fifth canal
-        canalE = new Canal(captor, displayE);
+        canalE = new Canal(captor);
         canalE.setDelay(Integer.parseInt(canalDelayE.getText()));
         canalE.attach(displayE);
 
@@ -152,13 +142,12 @@ public class Controller implements Initializable {
         reinitCaptor();
     }
 
-
     private void reinitCaptor() {
         captorScheduler.purge();
         captorScheduler.incrementWithStepByPeriod(captor, Integer.parseInt(delay.getText()), TimeUnit.MILLISECONDS);
     }
 
-    public void update(IDisplay display) {
+    public void update(Display display) {
         String value = String.valueOf(display.getValue());
         String time = "";
         if (display.getTime() != 0) {
@@ -196,7 +185,7 @@ public class Controller implements Initializable {
         }
     }
 
-    public void update(ICaptor captor) {
+    public void update(Captor captor) {
         if (valueCaptor != null && timeCaptor != null) {
             valueCaptor.setText(String.valueOf(captor.getValue().getValue()));
             String time = "";
@@ -208,7 +197,6 @@ public class Controller implements Initializable {
             timeCaptor.setText(time);
         }
     }
-
 
     private String formatDate(long value) {
         return LocalDateTime.ofEpochSecond(value, 0, ZoneOffset.UTC).format(DateTimeFormatter.ISO_DATE_TIME);

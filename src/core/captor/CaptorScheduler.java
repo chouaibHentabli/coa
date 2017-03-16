@@ -2,6 +2,7 @@ package core.captor;
 
 import core.difussionStrategy.DiffusionType;
 import core.util.CaptorValuesContainer;
+
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Timer;
@@ -44,11 +45,12 @@ public class CaptorScheduler {
                 if (captor.getDiffuseStrategy().getDiffusionType() == DiffusionType.EPOC) {
                     time = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
                 }
-                // Increament value in N by 1 and time by 0.01
+
                 int newValue = captor.getValue().getValue() + step;
                 if (newValue >= max) {
                     newValue = min;
                 }
+                System.err.println(newValue);
                 captor.setValue(new CaptorValuesContainer(newValue, time));
                 captor.tick();
             }
@@ -70,7 +72,7 @@ public class CaptorScheduler {
                 if (captor.getDiffuseStrategy().getDiffusionType() == DiffusionType.EPOC) {
                     time = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
                 }
-                // Increament value in N by 1 and time by 0.01
+
                 captor.setValue(
                         new CaptorValuesContainer((int) (Math.random() * (max - min) + min), time)
                 );

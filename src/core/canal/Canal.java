@@ -3,73 +3,60 @@ package core.canal;
 import core.captor.IAsyncCaptor;
 import core.captor.ICaptor;
 import core.display.Display;
-import core.display.IDisplay;
-import core.mi.MethodInvGetValue;
-import core.mi.MethodInvUpdate;
 import core.util.AbstractSubject;
-import core.util.Observer;
+import core.util.ObservatorDeCaptor;
 import core.util.ValuesContainer;
 
-import java.util.List;
 import java.util.concurrent.*;
 
 
 /**
  * Created by chouaib on 23/01/17.
  */
-public class Canal extends AbstractSubject implements ICanal {
+public class Canal extends AbstractSubject implements ObservatorDeCaptor, IAsyncCaptor {
 
     protected String name;
     private ICaptor captor;
-    private IDisplay display;
+    private Display display;
     private int delay = 0;
     private static int identifier = 0;
-    private static ScheduledExecutorService executorServiceCaptor = Executors.newScheduledThreadPool(50);
+    private static ScheduledExecutorService executorServiceCaptor = Executors.newScheduledThreadPool(100);
 
     /**
      * Constrcutor
      *
      * @param captor connected to canal
      */
-    public Canal(ICaptor captor, IDisplay display) {
+    /**
+     * Constrcutor
+     *
+     * @param captor connected to
+     */
+    public Canal(ICaptor captor) {
         name = "Canal_" + ++identifier;
+        captor.attach(this);
         this.captor = captor;
-        this.display = display;
-        attach(display);
         System.out.println(this + ".captor = " + captor);
     }
 
-
-    public String getName() {
-        return name;
+    @Override
+    public Future<ValuesContainer> getValue() {
+        Callable<ValuesContainer> methodRequest = () -> captor.getValue();
+        return executorServiceCaptor.schedule(methodRequest, delay, TimeUnit.MILLISECONDS);
     }
 
-    public ICaptor getCaptor() {
-        return captor;
-    }
-
-    public IDisplay getDisplay() {
-        return display;
-    }
-
+    /**
+     * Returns the delay in milliseconds
+     *
+     * @return
+     */
     public int getDelay() {
         return delay;
     }
 
-    public static int getIdentifier() {
-        return identifier;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCaptor(ICaptor captor) {
-        this.captor = captor;
-    }
-
-    public void setDisplay(Display display) {
-        this.display = display;
+    public void tick() {
+        captor.tick();
     }
 
     /**
@@ -81,40 +68,13 @@ public class Canal extends AbstractSubject implements ICanal {
     }
 
     @Override
-    public List<Observer> getObservers() {
-        return observers;
+    public String toString() {
+        return name;
     }
-
-    @Override
-    public Future<ValuesContainer> getValue() {
-        Callable<ValuesContainer> methodRequest= () -> captor.getValue();
-        return executorServiceCaptor.schedule(methodRequest, delay, TimeUnit.MILLISECONDS);    }
 
     @Override
     public Void update(ICaptor subject) {
         observers.forEach(observer -> observer.update(this));
         return null;
     }
-
-    @Override
-    public void tick() {
-        captor.tick();
-    }
-
-    @Override
-    public void attach(core.util.Observer o) {
-        captor.attach(o);
-    }
-
-    @Override
-    public void detach(core.util.Observer o) {
-        captor.detach(o);
-    }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-
-
 }
