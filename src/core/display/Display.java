@@ -19,7 +19,6 @@ import java.util.concurrent.ScheduledExecutorService;
  */
 public class Display implements IDisplay {
 
-
     protected String name;
     private Integer value = 0;
     private Double time = 0.0;
@@ -57,7 +56,7 @@ public class Display implements IDisplay {
     }
 
     @Override
-    public Void update(ICaptor subject) {
+    public Void update(IAsyncCaptor subject) {
         try {
             ValuesContainer container = canal.getValue().get();
             String oldValue = String.valueOf(value);

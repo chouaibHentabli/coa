@@ -74,23 +74,23 @@ public class Controller implements Initializable {
     TextField delay;
 
 
-    ICanal canalA;
-    ICanal canalB;
-    ICanal canalC;
-    ICanal canalD;
-    ICanal canalE;
+    Canal canalA;
+    Canal canalB;
+    Canal canalC;
+    Canal canalD;
+    Canal canalE;
 
     Display displayA = new Display(this);
     Display displayB = new Display(this);
     Display displayC = new Display(this);
     Display displayD = new Display(this);
     Display displayE = new Display(this);
-    AbstractCaptor captor;
 
+    Captor captor = new Captor(this);
     CaptorScheduler captorScheduler = new CaptorScheduler(1, 1500, 1);
 
     public Controller() {
-        captor = new Captor(this);
+
     }
 
     @FXML

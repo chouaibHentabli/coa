@@ -12,12 +12,16 @@ import java.util.concurrent.Future;
  */
 public interface IAsyncCaptor extends Subject {
 
-    public Future<ValuesContainer> getValue();
-
-    //Future<FutureEpoque> getValueEpoque();
+    /**
+     * Return the value contained in this capteur
+     *
+     * @return
+     */
+    Future<ValuesContainer> getValue();
 
     /**
      * Send a request for value updates to each observers
+     *
      */
     void tick();
 }

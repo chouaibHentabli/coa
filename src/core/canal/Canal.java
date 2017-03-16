@@ -1,5 +1,6 @@
 package core.canal;
 
+import core.captor.IAsyncCaptor;
 import core.captor.ICaptor;
 import core.display.Display;
 import core.display.IDisplay;
@@ -24,7 +25,6 @@ public class Canal extends AbstractSubject implements ICanal {
     private int delay = 0;
     private static int identifier = 0;
     private static ScheduledExecutorService executorServiceCaptor = Executors.newScheduledThreadPool(50);
-    private static ScheduledExecutorService executorServiceDisplay = Executors.newScheduledThreadPool(50);
 
     /**
      * Constrcutor
@@ -35,7 +35,7 @@ public class Canal extends AbstractSubject implements ICanal {
         name = "Canal_" + ++identifier;
         this.captor = captor;
         this.display = display;
-        attach(this);
+        attach(display);
         System.out.println(this + ".captor = " + captor);
     }
 
@@ -87,15 +87,14 @@ public class Canal extends AbstractSubject implements ICanal {
 
     @Override
     public Future<ValuesContainer> getValue() {
-        return executorServiceCaptor.schedule(new MethodInvGetValue(this.captor), this.delay, TimeUnit.MILLISECONDS);
-    }
+        Callable<ValuesContainer> methodRequest= () -> captor.getValue();
+        return executorServiceCaptor.schedule(methodRequest, delay, TimeUnit.MILLISECONDS);    }
 
     @Override
     public Void update(ICaptor subject) {
-        executorServiceDisplay.submit(new MethodInvUpdate(this));
+        observers.forEach(observer -> observer.update(this));
         return null;
     }
-
 
     @Override
     public void tick() {
