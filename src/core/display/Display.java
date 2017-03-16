@@ -13,48 +13,20 @@ import main.Controller;
  */
 public class Display implements Observer<IAsyncCaptor> {
 
-
+    private final Controller controller;
     protected String name;
     private Integer value = 0;
     private Double time = 0.0;
-    //proxy
-    //private ICanal canal;
     private static int identifier = 0;
-    private final Controller controller;
-
 
     public Display(Controller controller) {
         this.controller = controller;
         name = "Display_" + ++identifier;
     }
 
-
-    public Double getTime() {
-        return time;
-    }
-
-    public void setTime(Double time) {
-        this.time = time;
-    }
-
-    public void setValue(Integer value) {
-        this.value = value;
-    }
-
-    public Integer getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-
-    @Override
-    public Void update(IAsyncCaptor subject) {
+    public Void update(IAsyncCaptor captor) {
         try {
-            ValuesContainer container = subject.getValue().get();
-            System.err.println(container.getValue());
+            ValuesContainer container = captor.getValue().get();
             String oldValue = String.valueOf(value);
             value = container.getValue();
             if (time <= container.getTime()) {
@@ -67,9 +39,30 @@ public class Display implements Observer<IAsyncCaptor> {
             controller.update(this);
         }
         System.out.println(this + " receive value=" + value + " with time=" + time);
-
         return null;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    /**
+     * Returns the internal value of this screen
+     *
+     * @return
+     */
+    public Integer getValue() {
+        return value;
+    }
+
+    /**
+     * Returns the internal time related value of this screen
+     *
+     * @return
+     */
+    public Double getTime() {
+        return time;
+    }
 
 }

@@ -14,12 +14,21 @@ public class AbstractDiffusion implements IDiffusionStrategy {
 
     private DiffusionType type;
     protected List<Observer> observers = new ArrayList<>();
-    //lien de proxy
+    //proxy link
     protected ICaptor captor;
-
 
     public AbstractDiffusion(DiffusionType type) {
         this.type = type;
+    }
+
+    @Override
+    public DiffusionType getDiffusionType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        return "DiffusionStrategy[" + type + "]";
     }
 
     @Override
@@ -31,16 +40,6 @@ public class AbstractDiffusion implements IDiffusionStrategy {
     @Override
     public void execute() {
 
-    }
-
-    @Override
-    public DiffusionType getDiffusionType() {
-        return this.type;
-    }
-
-    @Override
-    public String toString() {
-        return "DiffusionStrategy[" + type + "]";
     }
 
 

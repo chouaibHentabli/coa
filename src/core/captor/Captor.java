@@ -1,11 +1,7 @@
 package core.captor;
 
- import core.canal.Canal;
- import core.difussionStrategy.*;
-  import main.Controller;
-
- import java.util.ArrayList;
- import java.util.List;
+import core.difussionStrategy.*;
+import main.Controller;
 
 
 /**
@@ -14,31 +10,33 @@ package core.captor;
  * servant
  */
 public class Captor extends AbstractCaptor {
+    private final Controller controller;
 
-    private List<Canal> canals = new ArrayList<Canal>();
-    private Controller controller;
+    private IDiffusionStrategy diffuseStrategy;
 
     public Captor(Controller controller) {
         System.out.println(this + " initialized");
         this.controller = controller;
     }
 
-
     public void setDiffuseStrategy(DiffusionType type) {
         switch (type) {
             case ATOMIC:
-                diffuseStrategy = new AtomicDiffusion(DiffusionType.ATOMIC);
+                this.diffuseStrategy = new AtomicDiffusion(DiffusionType.ATOMIC);
                 break;
             case EPOC:
-                diffuseStrategy = new EpocDiffusion(DiffusionType.EPOC);
+                this.diffuseStrategy = new EpocDiffusion(DiffusionType.EPOC);
                 break;
             case SEQUENTIAL:
-                diffuseStrategy = new SeqDiffusion(DiffusionType.SEQUENTIAL);
+                this.diffuseStrategy = new SeqDiffusion(DiffusionType.SEQUENTIAL);
                 break;
         }
         diffuseStrategy.configure(this, observers);
     }
 
+    public IDiffusionStrategy getDiffusionStrategy() {
+        return this.diffuseStrategy;
+    }
 
     @Override
     public void tick() {
@@ -46,6 +44,6 @@ public class Captor extends AbstractCaptor {
         if (controller != null) {
             controller.update(this);
         }
-        System.out.println("Tick with " + diffuseStrategy.getDiffusionType() + "with value " + value);
+        System.out.println("Tick with " + getDiffusionStrategy() + "with value " + value);
     }
 }

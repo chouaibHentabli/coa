@@ -3,6 +3,7 @@ package main;
 import core.canal.Canal;
 import core.captor.Captor;
 import core.captor.CaptorScheduler;
+import core.captor.ICaptor;
 import core.difussionStrategy.DiffusionType;
 import core.display.Display;
 import javafx.event.Event;
@@ -111,6 +112,7 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         captor.setDiffuseStrategy(DiffusionType.ATOMIC);
+        System.err.println(captor.getDiffuseStrategy());
 
         canalA = new Canal(captor);
         canalA.setDelay(Integer.parseInt(canalDelayA.getText()));
@@ -141,6 +143,7 @@ public class Controller implements Initializable {
 
         reinitCaptor();
     }
+
 
     private void reinitCaptor() {
         captorScheduler.purge();
@@ -185,7 +188,7 @@ public class Controller implements Initializable {
         }
     }
 
-    public void update(Captor captor) {
+    public void update(ICaptor captor) {
         if (valueCaptor != null && timeCaptor != null) {
             valueCaptor.setText(String.valueOf(captor.getValue().getValue()));
             String time = "";

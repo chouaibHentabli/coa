@@ -42,6 +42,7 @@ public class CaptorScheduler {
         TimerTask task = new TimerTask() {
             public void run() {
                 double time = 0;
+                //System.err.println(captor.getDiffuseStrategy());
                 if (captor.getDiffuseStrategy().getDiffusionType() == DiffusionType.EPOC) {
                     time = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
                 }

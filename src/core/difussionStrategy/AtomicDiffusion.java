@@ -11,7 +11,11 @@ public class AtomicDiffusion extends AbstractDiffusion {
         super(type);
     }
 
-    @Override
+    /**
+     * Atomic distribution.
+     * <p>
+     * No data can be lost.
+     */
     public void execute() {
         observers.forEach(observer -> observer.update(captor));
     }
