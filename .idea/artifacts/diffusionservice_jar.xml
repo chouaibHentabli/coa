@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="diffusionservice:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/diffusionservice_jar</output-path>
+    <root id="archive" name="diffusionservice.jar">
+      <element id="module-output" name="diffusionservice" />
+    </root>
+  </artifact>
+</component>
